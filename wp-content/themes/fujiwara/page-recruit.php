@@ -29,7 +29,7 @@ Template Name: Recruit page
             <div class="l-container">
                 <ul class="c-breadcrumbs__list">
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/" class="c-breadcrumbs__link">TOP</a>
+                        <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
                         <a href="<?php echo get_template_directory_uri(); ?>/company" class="c-breadcrumbs__link"
@@ -269,7 +269,7 @@ Template Name: Recruit page
                             </div>
                         </dl>
                         <div class="c-list-button__block">
-                            <a href="<?php echo get_template_directory_uri(); ?>/entry" class="c-list-button">エントリー</a>
+                            <a href="<?php echo esc_url(home_url('entry')); ?>" class="c-list-button">エントリー</a>
                         </div>
                     </div>
                 </div>
@@ -280,7 +280,7 @@ Template Name: Recruit page
         <section class="p-recruit-form">
             <div class="l-container">
                 <div class="p-recruit-form__inner">
-                    <a href="<?php echo get_template_directory_uri(); ?>/entry" class="p-recruit-form__link">
+                    <a href="<?php echo esc_url(home_url('entry')); ?>" class="p-recruit-form__link">
                         <h2 class="l-section__subTitle">Entry Form<span>エントリーフォーム</span></h2>
                         <div class="c-link__wrap">
                             <div class="c-link -white">
