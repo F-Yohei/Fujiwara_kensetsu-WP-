@@ -44,7 +44,7 @@ $classes[] = 'service';
 } elseif (is_404()) {
 $classes[] = 'subpage';
 $classes[] = '404';
-} elseif (is_page('works')) {
+} elseif (is_archive('works')) {
 $classes[] = 'subpage';
 } elseif (is_singular('works')) {
 $classes[] = 'subpage';

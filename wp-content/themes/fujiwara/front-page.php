@@ -228,7 +228,7 @@ Template Name: TOP page
                                 </p>
                             </div>
                             <div class="c-link__wrap">
-                                <a href="./company" class="c-link">
+                                <a href="<?php echo esc_url(home_url('company')); ?>" class="c-link">
                                     View more
                                     <span class="circle">
                                         <span class="arrow"></span>
