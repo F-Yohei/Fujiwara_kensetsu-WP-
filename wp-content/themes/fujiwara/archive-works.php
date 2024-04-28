@@ -64,174 +64,50 @@ Template Name: Works page
                 </nav>
                 <div class="p-works-archive__inner">
                     <ul class="p-works-archive__list">
+                        <?php
+                        $args = array(
+                            'post_type' => 'works', // 投稿タイプを指定
+                            'posts_per_page' => 9, // 表示する記事数
+                        );
+                        $news_query = new WP_Query($args);
+                        if ($news_query->have_posts()) :
+                            while ($news_query->have_posts()) :
+                                $news_query->the_post();
+                        ?>
+                        <!-- ここにhtml -->
                         <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
+                            <a href="<?php the_permalink(); ?>" class="p-works-archive__link">
                                 <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img01.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -archi">建築</span>
+                                    <?php if (has_post_thumbnail()) :
+                                                the_post_thumbnail('large'); ?>
+                                    <?php else : ?>
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/no-image.png"
+                                        alt="アイキャッチ画像がありません" />
+                                    <?php endif; ?>
+                                    <span class="p-works-archive__tag
+                                            <?php $terms = wp_get_object_terms($post->ID, 'construction');
+                                            foreach ($terms as $term) {
+                                                echo '-' . $term->slug . ' ';
+                                            }
+                                            ?>">
+
+                                        <?php
+                                                $terms = wp_get_object_terms($post->ID, 'construction');
+                                                foreach ($terms as $term) {
+                                                    echo  $term->name;
+                                                }
+                                                ?>
+                                    </span>
                                 </figure>
                                 <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯ビル</h2>
+                                    <h2 class="p-works-archive__title"><?php the_title(); ?></h2>
                                     <time>2022.02.24</time>
                                 </div>
                             </a>
                         </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img02.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -housing">住宅</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯県◯◯宅</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img03.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -civil">土木</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯補修工事</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img04.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -archi">建築</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯ビル</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img05.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -civil">土木</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯工事</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img06.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -archi">建築</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯ビル</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img07.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -housing">住宅</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯県◯◯宅</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img08.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -civil">土木</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯工事</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img09.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -archi">建築</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯ビル</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img01.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -archi">建築</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯ビル</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img02.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -housing">住宅</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯県◯◯宅</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="p-works-archive__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/detail"
-                                class="p-works-archive__link">
-                                <figure>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/archive_img03.jpg"
-                                        alt="" />
-                                    <span class="p-works-archive__tag -civil">土木</span>
-                                </figure>
-                                <div class="p-works-archive__info">
-                                    <h2 class="p-works-archive__title">◯◯補修工事</h2>
-                                    <time>2022.02.24</time>
-                                </div>
-                            </a>
-                        </li>
+                        <?php endwhile;
+                        endif;
+                        wp_reset_postdata(); ?>
                     </ul>
                     <div class="c-list-button__block">
                         <button type="button" class="c-list-button -eng">View More</button>

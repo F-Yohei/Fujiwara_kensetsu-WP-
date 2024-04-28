@@ -71,79 +71,50 @@ Template Name: Works Detail page
                             <span class="p-works-detail__tag">建築</span>
                         </div>
                         <figure class="p-works-detail__eyecatch">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/eyecatch_img.jpg"
-                                alt="" />
+                            <?php if (has_post_thumbnail()) :
+                                the_post_thumbnail('large'); ?>
+                            <?php
+                            else :
+                            ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/no-image.png"
+                                alt="アイキャッチ画像がありません" />
+                            <?php
+                            endif; ?>
                         </figure>
                         <div id="item01" class="p-works-detail__block js-block01">
                             <h2 class="p-works-detail__blockTitle">概要</h2>
                             <p class="l-section__text">
-                                県内の高等学校の改修工事を行いました。<br />歴史ある高等学校ということで、これまでの歴史を振り返られる部分は残しつつ、今後も長く存在し続けられるよう、地盤強化を施させていただきました。<br />“安全に過ごせる”を当たり前に、そんな当たり前を自信持って提供し続けられるよう技術を高め続けて参ります。
+                                <?php echo CFS()->get('worksOutline'); ?>
                             </p>
                         </div>
                         <div id="item02" class="p-works-detail__block js-block02">
                             <h2 class="p-works-detail__blockTitle">ギャラリー</h2>
                             <ul class="p-works-detail__gallery">
+                                <?php
+                                $fields = CFS()->get('worksGallery');
+                                foreach ($fields as $field) :
+                                ?>
                                 <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img01.jpg"
+                                    <a href="<?php echo $field['worksGalleryImg']; ?>"
                                         class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
-                                        <figure><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img01_small.jpg"
-                                                alt="" /></figure>
+                                        <figure><img src="<?php echo $field['worksGalleryImg']; ?>" alt="" /></figure>
                                     </a>
                                 </li>
-                                <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img02.jpg"
-                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
-                                        <figure><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img02_small.jpg"
-                                                alt="" /></figure>
-                                    </a>
-                                </li>
-                                <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img03.jpg"
-                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
-                                        <figure><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img03_small.jpg"
-                                                alt="" /></figure>
-                                    </a>
-                                </li>
-                                <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img04.jpg"
-                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
-                                        <figure><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img04_small.jpg"
-                                                alt="" /></figure>
-                                    </a>
-                                </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                         <div id="item03" class="p-works-detail__block js-block03">
                             <h2 class="p-works-detail__blockTitle">工事内容</h2>
                             <dl class="l-section-list">
+                                <?php
+                                $fields = CFS()->get('Workscontents');
+                                foreach ($fields as $field) :
+                                ?>
                                 <div class="l-section-list__row">
-                                    <dt class="l-section-list__item">竣工</dt>
-                                    <dd class="l-section-list__desc">2022年2月11日</dd>
+                                    <dt class="l-section-list__item"><?php echo $field['WorkscontentsName']; ?></dt>
+                                    <dd class="l-section-list__desc"><?php echo $field['WorkscontentsDesc']; ?></dd>
                                 </div>
-                                <div class="l-section-list__row">
-                                    <dt class="l-section-list__item">工事名</dt>
-                                    <dd class="l-section-list__desc">千葉県立◯◯高等学校改修工事</dd>
-                                </div>
-                                <div class="l-section-list__row">
-                                    <dt class="l-section-list__item">発注者</dt>
-                                    <dd class="l-section-list__desc">千葉県◯◯市　◯◯部</dd>
-                                </div>
-                                <div class="l-section-list__row">
-                                    <dt class="l-section-list__item">設計</dt>
-                                    <dd class="l-section-list__desc">（株）◯◯設計事務所</dd>
-                                </div>
-                                <div class="l-section-list__row">
-                                    <dt class="l-section-list__item">担当</dt>
-                                    <dd class="l-section-list__desc">藤原建設工業</dd>
-                                </div>
-                                <div class="l-section-list__row">
-                                    <dt class="l-section-list__item">詳細</dt>
-                                    <dd class="l-section-list__desc">校舎・屋上　一式改修工事<br />外壁・内部改修、塗装など</dd>
-                                </div>
+                                <?php endforeach; ?>
                             </dl>
                         </div>
                     </div>
