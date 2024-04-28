@@ -53,3 +53,37 @@ $classes[] = 'js-body';
 return $classes;
 }
 ?>
+
+<?php
+/*==============================================================
+ページネーション
+==============================================================*/
+function pagination( $pages, $paged, $range = 2 ) {
+  $pages = ( int ) $pages;
+  $paged = $paged ?: 1;
+  $text_before  = "‹";
+  $text_next    = "›";
+  if ( 1 !== $pages ) {
+    //２ページ以上の時
+    echo '<div class="Pagination">';
+    if ( $paged > 1 ) {
+      // 「‹」１ページ前へ戻るリンクを表示
+      echo '<a href="', get_pagenum_link( $paged - 1 ) ,'" class="Pagination-Item">', $text_before ,'</a>';
+    }
+    for ( $i = 1; $i <= $pages; $i++ ) {
+      if ( $i <= $paged + $range && $i >= $paged - $range ) {
+        if ( $paged === $i ) {
+          echo '<span class="Pagination-Item isActive">', $i ,'</span>'; // 現在のページの数字
+        } else {
+          echo '<a href="', get_pagenum_link( $i ) ,'" class="Pagination-Item">', $i ,'</a>';
+        }
+      }
+    }
+    if ( $paged < $pages ) {
+      // 「›」１ページ後へ進むリンクを表示
+      echo '<a href="', get_pagenum_link( $paged + 1 ) ,'" class="Pagination-Item">' ,$text_next ,'</a>';
+    }
+    echo '</div>';
+  }
+}
+?>
