@@ -27,7 +27,7 @@ $classes[] = 'subpage';
 $classes[] = 'confirm';
 } elseif (is_page('entry-thx')) {
 $classes[] = 'subpage';
-} elseif (is_page('news')) {
+} elseif (is_archive('news')) {
 $classes[] = 'subpage';
 $classes[] = 'news';
 } elseif (is_singular('news')) {

@@ -45,100 +45,70 @@ Template Name: News page
                             <a href="<?php echo get_template_directory_uri(); ?>/news"
                                 class="c-archive-nav__link -current">全て</a>
                         </li>
-                        <li class="c-archive-nav__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/news/information"
-                                class="c-archive-nav__link">お知らせ</a>
-                        </li>
-                        <li class="c-archive-nav__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/news/blog"
-                                class="c-archive-nav__link">ブログ</a>
-                        </li>
+                        <?php
+                        $taxonomies = array(
+                            'news_category'
+                        );
+                        $args = array(
+                            'order' => 'DESC'
+                        );
+                        $taxonomy_terms = get_terms($taxonomies, $args);
+                        if (!empty($taxonomy_terms) && !is_wp_error($taxonomy_terms)) {
+
+                            foreach ($taxonomy_terms as $taxonomy_term) :
+                        ?>
+                        <li class="c-archive-nav__item"><a href="<?php echo get_term_link($taxonomy_term); ?>"
+                                class="c-archive-nav__link <?php if ($taxonomy_term->slug === $term) {
+                                                                                                                                                        echo '-current';
+                                                                                                                                                    } ?>"><?php echo $taxonomy_term->name; ?></a></li>
+                        <?php
+                            endforeach;
+                        }
+                        ?>
                     </ul>
                 </nav>
                 <div class="p-news-archive__inner">
                     <div class="p-news-archive__content">
                         <ul class="p-news-archive__list">
+                            <?php
+                            $args = array(
+                                'post_type' => 'news', // 投稿タイプを指定
+                                'posts_per_page' => 12, // 表示する記事数
+                            );
+                            $news_query = new WP_Query($args);
+                            if ($news_query->have_posts()) :
+                                while ($news_query->have_posts()) :
+                                    $news_query->the_post();
+                            ?>
+                            <!-- ここにhtml -->
                             <li class="p-news-archive__item">
-                                <a href="<?php echo get_template_directory_uri(); ?>/news/detail"
-                                    class="p-news-archive__link">
+                                <a href="<?php the_permalink(); ?>" class="p-news-archive__link">
                                     <figure>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/news/archive_img01.jpg"
-                                            alt="" />
+                                        <?php if (has_post_thumbnail()) :
+                                                    the_post_thumbnail('large'); ?>
+                                        <?php else : ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/no-image.png"
+                                            alt="アイキャッチ画像がありません" />
+                                        <?php endif; ?>
                                     </figure>
                                     <div class="p-news-archive__desc">
                                         <div class="p-news-archive__info">
-                                            <time>2022.02.24</time>
-                                            <span class="p-news-archive__tag">お知らせ</span>
+                                            <time><?php the_time('Y.m.d') ?></time>
+                                            <span class="p-news-archive__tag">
+                                                <?php $terms = wp_get_object_terms($post->ID, 'news_category');
+                                                        foreach ($terms as $term) {
+                                                            echo  $term->name;
+                                                        }
+                                                        ?>
+                                            </span>
                                         </div>
-                                        <h2 class="p-news-archive__title">ホームページをリニューアルしました。</h2>
+                                        <h2 class="p-news-archive__title"><?php the_title(); ?></h2>
                                     </div>
                                 </a>
                             </li>
-                            <li class="p-news-archive__item">
-                                <a href="<?php echo get_template_directory_uri(); ?>/news/detail"
-                                    class="p-news-archive__link">
-                                    <figure>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/news/archive_img02.jpg"
-                                            alt="" />
-                                    </figure>
-                                    <div class="p-news-archive__desc">
-                                        <div class="p-news-archive__info">
-                                            <time>2022.02.24</time>
-                                            <span class="p-news-archive__tag">お知らせ</span>
-                                        </div>
-                                        <h2 class="p-news-archive__title">採用情報を更新しました。</h2>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="p-news-archive__item">
-                                <a href="<?php echo get_template_directory_uri(); ?>/news/detail"
-                                    class="p-news-archive__link">
-                                    <figure>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/news/archive_img03.jpg"
-                                            alt="" />
-                                    </figure>
-                                    <div class="p-news-archive__desc">
-                                        <div class="p-news-archive__info">
-                                            <time>2022.02.24</time>
-                                            <span class="p-news-archive__tag">ブログ</span>
-                                        </div>
-                                        <h2 class="p-news-archive__title">◯◯にて弊社代表のスピーチが実施されました。</h2>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="p-news-archive__item">
-                                <a href="<?php echo get_template_directory_uri(); ?>/news/detail"
-                                    class="p-news-archive__link">
-                                    <figure>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/news/archive_img04.jpg"
-                                            alt="" />
-                                    </figure>
-                                    <div class="p-news-archive__desc">
-                                        <div class="p-news-archive__info">
-                                            <time>2022.02.24</time>
-                                            <span class="p-news-archive__tag">お知らせ</span>
-                                        </div>
-                                        <h2 class="p-news-archive__title">ダミーテキストです。ダミーテキストです。ダミーテキストです。ダミーテキストです。</h2>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="p-news-archive__item">
-                                <a href="<?php echo get_template_directory_uri(); ?>/news/detail"
-                                    class="p-news-archive__link">
-                                    <figure>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/news/archive_img05.jpg"
-                                            alt="" />
-                                    </figure>
-                                    <div class="p-news-archive__desc">
-                                        <div class="p-news-archive__info">
-                                            <time>2022.02.24</time>
-                                            <span class="p-news-archive__tag">お知らせ</span>
-                                        </div>
-                                        <h2 class="p-news-archive__title">
-                                            ダミーテキストです。ダミーテキストです。ダミーテキストです。ダミーテキストです。ダミーテキストです。</h2>
-                                    </div>
-                                </a>
-                            </li>
+                            <?php endwhile;
+                            endif;
+                            wp_reset_postdata(); ?>
                         </ul>
                         <!-- pagination -->
                         <div class="c-pagination">
