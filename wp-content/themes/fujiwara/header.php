@@ -76,7 +76,8 @@
                                     </figure>
                                     <ul class="l-menu-sub__list">
                                         <li class="l-menu-sub__item">
-                                            <a href="#" class="l-menu-sub__link">
+                                            <a href="<?php echo esc_url(home_url('construction/archi')); ?>"
+                                                class="l-menu-sub__link">
                                                 <div class="l-menu-sub__linkTitle">
                                                     <span class="l-menu-sub__linkTitle--en">Architecture</span>
                                                     <span class="l-menu-sub__linkTitle--ja">建築事業</span>
@@ -85,7 +86,8 @@
                                             </a>
                                         </li>
                                         <li class="l-menu-sub__item">
-                                            <a href="#" class="l-menu-sub__link">
+                                            <a href="<?php echo esc_url(home_url('construction/civil')); ?>"
+                                                class="l-menu-sub__link">
                                                 <div class="l-menu-sub__linkTitle">
                                                     <span class="l-menu-sub__linkTitle--en">Civil engineering</span>
                                                     <span class="l-menu-sub__linkTitle--ja">土木事業</span>
@@ -94,7 +96,8 @@
                                             </a>
                                         </li>
                                         <li class="l-menu-sub__item">
-                                            <a href="#" class="l-menu-sub__link">
+                                            <a href="<?php echo esc_url(home_url('construction/housing')); ?>"
+                                                class="l-menu-sub__link">
                                                 <div class="l-menu-sub__linkTitle">
                                                     <span class="l-menu-sub__linkTitle--en">Housing</span>
                                                     <span class="l-menu-sub__linkTitle--ja">住宅事業</span>
