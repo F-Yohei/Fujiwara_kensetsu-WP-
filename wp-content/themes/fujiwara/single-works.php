@@ -35,14 +35,14 @@ Template Name: Works Detail page
             <div class="l-container">
                 <ol class="c-breadcrumbs__list">
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/" class="c-breadcrumbs__link">TOP</a>
+                        <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/works" class="c-breadcrumbs__link">施工実績</a>
+                        <a href="<?php echo esc_url(home_url('works')); ?>" class="c-breadcrumbs__link">施工実績</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/works/detail" class="c-breadcrumbs__link"
-                            aria-current="page">高等学校改修工事</a>
+                        <a href="<?php the_permalink(); ?>" class="c-breadcrumbs__link"
+                            aria-current="page"><?php the_title(); ?></a>
                     </li>
                 </ol>
             </div>
@@ -67,8 +67,14 @@ Template Name: Works Detail page
                     <div class="p-works-detail__content">
                         <h1 class="p-works-detail__title">高等学校改修工事</h1>
                         <div class="p-works-detail__info">
-                            <time>2022.02.24</time>
-                            <span class="p-works-detail__tag">建築</span>
+                            <time><?php the_time('Y.m.d') ?></time>
+                            <span class="p-works-detail__tag">
+                                <?php $terms = wp_get_object_terms($post->ID, 'construction');
+                                foreach ($terms as $term) {
+                                    echo  $term->name;
+                                }
+                                ?>
+                            </span>
                         </div>
                         <figure class="p-works-detail__eyecatch">
                             <?php if (has_post_thumbnail()) :

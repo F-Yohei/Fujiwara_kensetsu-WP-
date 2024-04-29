@@ -27,11 +27,10 @@ Template Name: Works Category page
             <div class="l-container">
                 <ul class="c-breadcrumbs__list">
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/" class="c-breadcrumbs__link">TOP</a>
+                        <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/company" class="c-breadcrumbs__link"
-                            aria-current="page">事業内容</a>
+                        <a href="<?php the_permalink(); ?>" class="c-breadcrumbs__link" aria-current="page">事業内容</a>
                     </li>
                 </ul>
             </div>
