@@ -473,99 +473,54 @@ Template Name: TOP page
                     <div id="js-slider-works" class="p-home-works__slideContainer splide">
                         <div class="p-home-works__slideContainerInner  p-home-works__sliderTrack splide__track">
                             <ul class="p-home-works__slideList splide__list">
+                                <?php
+                                $args = array(
+                                    'post_type' => 'works', // 投稿タイプを指定
+                                    'posts_per_page' => 6, // 表示する記事数
+                                );
+                                $news_query = new WP_Query($args);
+                                if ($news_query->have_posts()) :
+                                    while ($news_query->have_posts()) :
+                                        $news_query->the_post();
+                                ?>
+                                <!-- ここにhtml -->
                                 <li class="p-home-works__slideItem splide__slide">
-                                    <a href="#" class="p-home-works__slideLink">
+                                    <a href="<?php the_permalink(); ?>" class="p-home-works__slideLink">
                                         <div class="p-home-works__itemBlock">
                                             <figure>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/works_img01.jpg"
-                                                    alt="" />
-                                                <span class="p-home-works__itemTag -archi">建築</span>
+                                                <?php if (has_post_thumbnail()) :
+                                                            the_post_thumbnail('large'); ?>
+                                                <?php else : ?>
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/no-image.png"
+                                                    alt="アイキャッチ画像がありません" />
+                                                <?php endif; ?>
+                                                <span class="p-home-works__itemTag
+                                                <?php $terms = wp_get_object_terms($post->ID, 'construction');
+                                                foreach ($terms as $term) {
+                                                    echo '-' . $term->slug . ' ';
+                                                }
+                                                ?>">
+                                                    <?php
+                                                            $terms = wp_get_object_terms($post->ID, 'construction');
+                                                            foreach ($terms as $term) {
+                                                                echo  $term->name;
+                                                            }
+                                                            ?>
+                                                </span>
                                             </figure>
                                             <div class="p-home-works__info">
-                                                <h3 class="p-home-works__subTitle">◯◯ビル工事</h3>
-                                                <time>2022.02.24</time>
+                                                <h3 class="p-home-works__subTitle"><?php the_title(); ?></h3>
+                                                <time><?php the_time('Y.m.d') ?></time>
                                             </div>
                                         </div>
                                     </a>
                                 </li>
-                                <li class="p-home-works__slideItem splide__slide">
-                                    <a href="#" class="p-home-works__slideLink">
-                                        <div class="p-home-works__itemBlock">
-                                            <figure>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/works_img02.jpg"
-                                                    alt="" />
-                                                <span class="p-home-works__itemTag -archi">建築</span>
-                                            </figure>
-                                            <div class="p-home-works__info">
-                                                <h3 class="p-home-works__subTitle">◯◯ビル工事</h3>
-                                                <time>2022.02.24</time>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="p-home-works__slideItem splide__slide">
-                                    <a href="#" class="p-home-works__slideLink">
-                                        <div class="p-home-works__itemBlock">
-                                            <figure>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/works_img03.jpg"
-                                                    alt="" />
-                                                <span class="p-home-works__itemTag -archi">建築</span>
-                                            </figure>
-                                            <div class="p-home-works__info">
-                                                <h3 class="p-home-works__subTitle">◯◯ビル工事</h3>
-                                                <time>2022.02.24</time>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="p-home-works__slideItem splide__slide">
-                                    <a href="#" class="p-home-works__slideLink">
-                                        <div class="p-home-works__itemBlock">
-                                            <figure>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/works_img04.jpg"
-                                                    alt="" />
-                                                <span class="p-home-works__itemTag -archi">建築</span>
-                                            </figure>
-                                            <div class="p-home-works__info">
-                                                <h3 class="p-home-works__subTitle">◯◯ビル工事</h3>
-                                                <time>2022.02.24</time>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="p-home-works__slideItem splide__slide">
-                                    <a href="#" class="p-home-works__slideLink">
-                                        <div class="p-home-works__itemBlock">
-                                            <figure>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/works_img04.jpg"
-                                                    alt="" />
-                                                <span class="p-home-works__itemTag -archi">建築</span>
-                                            </figure>
-                                            <div class="p-home-works__info">
-                                                <h3 class="p-home-works__subTitle">◯◯ビル工事</h3>
-                                                <time>2022.02.24</time>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="p-home-works__slideItem splide__slide">
-                                    <a href="#" class="p-home-works__slideLink">
-                                        <div class="p-home-works__itemBlock">
-                                            <figure>
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/works_img04.jpg"
-                                                    alt="" />
-                                                <span class="p-home-works__itemTag -archi">建築</span>
-                                            </figure>
-                                            <div class="p-home-works__info">
-                                                <h3 class="p-home-works__subTitle">◯◯ビル工事</h3>
-                                                <time>2022.02.24</time>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
+                                <?php endwhile;
+                                endif;
+                                wp_reset_postdata(); ?>
                             </ul>
                             <div class="c-link__wrap">
-                                <a href="./company" class="c-link">
+                                <a href="<?php echo esc_url(home_url('works')); ?>" class="c-link">
                                     View more
                                     <span class="circle">
                                         <span class="arrow"></span>
@@ -593,77 +548,48 @@ Template Name: TOP page
                         </h2>
                     </div>
                     <ul class="p-home-news__list">
+                        <?php
+                        $args = array(
+                            'post_type' => 'news', // 投稿タイプを指定
+                            'posts_per_page' => 4, // 表示する記事数
+                        );
+                        $news_query = new WP_Query($args);
+                        if ($news_query->have_posts()) :
+                            while ($news_query->have_posts()) :
+                                $news_query->the_post();
+                        ?>
+                        <!-- ここにhtml -->
                         <li class="p-home-news__item">
                             <div class="p-home-news__itemBlock">
                                 <a href="#" class="p-home-news__itemLink">
                                     <figure>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/news_img01.jpg"
-                                            alt="" />
+                                        <?php if (has_post_thumbnail()) :
+                                                    the_post_thumbnail('large'); ?>
+                                        <?php else : ?>
+                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/no-image.png"
+                                            alt="アイキャッチ画像がありません" />
+                                        <?php endif; ?>
                                     </figure>
                                     <div class="p-home-news__info">
                                         <div class="p-home-news__date">
-                                            <time>2022.02.24</time>
-                                            <span class="p-home-news__tag">お知らせ</span>
+                                            <time><?php the_time('Y.m.d') ?></time>
+                                            <span class="p-home-news__tag"> <?php $terms = wp_get_object_terms($post->ID, 'news_category');
+                                                    foreach ($terms as $term) {
+                                                        echo  $term->name;
+                                                    } ?>
+                                            </span>
                                         </div>
-                                        <h3 class="p-home-news__subTitle">ホームページをリニューアルしました。</h3>
+                                        <h3 class="p-home-news__subTitle"><?php the_title(); ?></h3>
                                     </div>
                                 </a>
                             </div>
                         </li>
-                        <li class="p-home-news__item">
-                            <div class="p-home-news__itemBlock">
-                                <a href="#" class="p-home-news__itemLink">
-                                    <figure>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/news_img02.jpg"
-                                            alt="" />
-                                    </figure>
-                                    <div class="p-home-news__info">
-                                        <div class="p-home-news__date">
-                                            <time>2022.02.24</time>
-                                            <span class="p-home-news__tag">お知らせ</span>
-                                        </div>
-                                        <h3 class="p-home-news__subTitle">ホームページをリニューアルしました。</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="p-home-news__item">
-                            <div class="p-home-news__itemBlock">
-                                <a href="#" class="p-home-news__itemLink">
-                                    <figure>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/news_img03.jpg"
-                                            alt="" />
-                                    </figure>
-                                    <div class="p-home-news__info">
-                                        <div class="p-home-news__date">
-                                            <time>2022.02.24</time>
-                                            <span class="p-home-news__tag">ブログ</span>
-                                        </div>
-                                        <h3 class="p-home-news__subTitle">ホームページをリニューアルしました。</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        <li class="p-home-news__item">
-                            <div class="p-home-news__itemBlock">
-                                <a href="#" class="p-home-news__itemLink">
-                                    <figure>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/home/news_img04.jpg"
-                                            alt="" />
-                                    </figure>
-                                    <div class="p-home-news__info">
-                                        <div class="p-home-news__date">
-                                            <time>2022.02.24</time>
-                                            <span class="p-home-news__tag">お知らせ</span>
-                                        </div>
-                                        <h3 class="p-home-news__subTitle">ホームページをリニューアルしました。</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
+                        <?php endwhile;
+                        endif;
+                        wp_reset_postdata(); ?>
                     </ul>
                     <div class="c-link__wrap">
-                        <a href="./company" class="c-link">
+                        <a href="<?php echo esc_url(home_url('works')); ?>" class="c-link">
                             View more
                             <span class="circle">
                                 <span class="arrow"></span>
@@ -715,7 +641,7 @@ Template Name: TOP page
                                 一緒に未来を築いていける方とお会いできるのを楽しみにしています。
                             </p>
                             <div class="c-link__wrap">
-                                <a href="./company" class="c-link">
+                                <a href="<?php echo esc_url(home_url('recruit')); ?>" class="c-link">
                                     View more
                                     <span class="circle">
                                         <span class="arrow"></span>
