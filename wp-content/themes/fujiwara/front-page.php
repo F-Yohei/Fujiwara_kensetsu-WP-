@@ -5,7 +5,8 @@
 Template Name: TOP page
 */
 ?>
-<video id="js-video" class="p-home-mv__video" src="./assets/video/fujiwara_movie.mp4"
+<video id="js-video" class="p-home-mv__video"
+    src="<?php echo get_template_directory_uri(); ?>/assets/video/fujiwara_movie.mp4"
     poster="<?php echo get_template_directory_uri(); ?>/assets/images/home/video_bg.jpg" width="100%" height="auto" loop
     autoplay muted playsinline></video>
 <!-- mouse cursor -->
