@@ -2,13 +2,13 @@
 <div class="l-footer__contact">
     <div class="l-footer__contactInner">
         <div class="l-footer__contactBlock">
-            <a href="./contact" class="l-footer__contactLink -contact">
+            <a href="<?php echo esc_url(home_url('contact')); ?>" class="l-footer__contactLink -contact">
                 <h2 class="l-footer__contactTitle">Contact<span>お問い合わせ</span></h2>
                 <div class="l-footer__contactBg"></div>
             </a>
         </div>
         <div class="l-footer__contactBlock">
-            <a href="./recruit" class="l-footer__contactLink -recruit">
+            <a href="<?php echo esc_url(home_url('recruit')); ?>" class="l-footer__contactLink -recruit">
                 <h2 class="l-footer__contactTitle">Recruit<span>採用情報</span></h2>
                 <div class="l-footer__contactBg"></div>
             </a>
@@ -21,27 +21,27 @@
             <nav class="l-footer__nav">
                 <ul class="l-footer__navList">
                     <li class="l-footer__navItem">
-                        <a href="./company" class="l-footer__navLink">COMPANY</a>
+                        <a href="<?php echo esc_url(home_url('company')); ?>" class="l-footer__navLink">COMPANY</a>
                     </li>
                     <li class="l-footer__navItem">
-                        <a href="./service" class="l-footer__navLink">SERVICE</a>
+                        <a href="<?php echo esc_url(home_url('service')); ?>" class="l-footer__navLink">SERVICE</a>
                     </li>
                     <li class="l-footer__navItem">
-                        <a href="./works" class="l-footer__navLink">WORKS</a>
+                        <a href="<?php echo esc_url(home_url('works')); ?>" class="l-footer__navLink">WORKS</a>
                     </li>
                     <li class="l-footer__navItem">
-                        <a href="./news" class="l-footer__navLink">NEWS</a>
+                        <a href="<?php echo esc_url(home_url('news')); ?>" class="l-footer__navLink">NEWS</a>
                     </li>
                     <li class="l-footer__navItem">
-                        <a href="./contact" class="l-footer__navLink">CONTACT</a>
+                        <a href="<?php echo esc_url(home_url('contact')); ?>" class="l-footer__navLink">CONTACT</a>
                     </li>
                     <li class="l-footer__navItem">
-                        <a href="./recruit" class="l-footer__navLink">RECRUIT</a>
+                        <a href="<?php echo esc_url(home_url('recruit')); ?>" class="l-footer__navLink">RECRUIT</a>
                     </li>
                 </ul>
             </nav>
             <div class="l-footer__company">
-                <a href="./" class="l-header__logoLink">
+                <a href="<?php echo esc_url(home_url('')); ?>" class="l-header__logoLink">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/footer_logo.svg"
                         alt="藤原建設工業株式会社" />
                 </a>
@@ -63,7 +63,7 @@
             </a>
         </div>
         <div class="l-footer__policy">
-            <a href="./privacy" class="l-footer__policy__link">Privacy Policy</a>
+            <a href="<?php echo esc_url(home_url('privacy')); ?>" class="l-footer__policy__link">Privacy Policy</a>
             <p class="l-footer__policyText">© 1995 Fujiwara Construction Industry. Co., Ltd.</p>
         </div>
     </div>

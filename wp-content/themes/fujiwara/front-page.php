@@ -8,7 +8,8 @@ Template Name: TOP page
 <video id="js-video" class="p-home-mv__video"
     src="<?php echo get_template_directory_uri(); ?>/assets/video/fujiwara_movie.mp4"
     poster="<?php echo get_template_directory_uri(); ?>/assets/images/home/video_bg.jpg" width="100%" height="auto" loop
-    autoplay muted playsinline></video>
+    autoplay muted playsinline>
+</video>
 <!-- mouse cursor -->
 <div id="js-cursor" class="p-cursor"></div>
 <div id="js-chaser" class="p-chaser">
@@ -269,7 +270,7 @@ Template Name: TOP page
                             </p>
                         </div>
                         <div class="c-link__wrap">
-                            <a href="./company" class="c-link">
+                            <a href="<?php echo esc_url(home_url('service')); ?>" class="c-link">
                                 View more
                                 <span class="circle">
                                     <span class="arrow"></span>
