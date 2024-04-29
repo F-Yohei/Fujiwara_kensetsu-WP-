@@ -284,7 +284,7 @@ Template Name: TOP page
                                 <p class="p-home-service__itemTitle--ja">建築事業</p>
                             </div>
                             <div class="p-home-service__link">
-                                <a href="./company" class="c-link -white">
+                                <a href="<?php echo esc_url(home_url('construction/archi')); ?>" class="c-link -white">
                                     View more
                                     <span class="circle">
                                         <span class="arrow"></span>
@@ -308,7 +308,7 @@ Template Name: TOP page
                                 <p class="p-home-service__itemTitle--ja">土木事業</p>
                             </div>
                             <div class="p-home-service__link">
-                                <a href="./company" class="c-link -white">
+                                <a href="<?php echo esc_url(home_url('construction/civil')); ?>" class="c-link -white">
                                     View more
                                     <span class="circle">
                                         <span class="arrow"></span>
@@ -332,7 +332,8 @@ Template Name: TOP page
                                 <p class="p-home-service__itemTitle--ja">住宅事業</p>
                             </div>
                             <div class="p-home-service__link">
-                                <a href="./company" class="c-link -white">
+                                <a href="<?php echo esc_url(home_url('construction/housing')); ?>"
+                                    class="c-link -white">
                                     View more
                                     <span class="circle ">
                                         <span class="arrow"></span>

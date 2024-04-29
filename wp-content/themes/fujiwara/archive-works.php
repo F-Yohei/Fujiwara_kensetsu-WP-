@@ -57,10 +57,14 @@ Template Name: Works Category page
 
                             foreach ($taxonomy_terms as $taxonomy_term) :
                         ?>
-                        <li class="c-archive-nav__item"><a href="<?php echo get_term_link($taxonomy_term); ?>"
-                                class="c-archive-nav__link <?php if ($taxonomy_term->slug === $term) {
-                                                                                                                                                        echo '-current';
-                                                                                                                                                    } ?>"><?php echo $taxonomy_term->name; ?></a></li>
+                        <li class="c-archive-nav__item">
+                            <a href="<?php echo get_term_link($taxonomy_term); ?>" class="c-archive-nav__link
+                            <?php if ($taxonomy_term->slug === $term) {
+                                    echo '-current';
+                                } ?>">
+                                <?php echo $taxonomy_term->name; ?>
+                            </a>
+                        </li>
                         <?php
                             endforeach;
                         }
