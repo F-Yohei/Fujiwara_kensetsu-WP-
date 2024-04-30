@@ -31,10 +31,10 @@ Template Name: Service page
             <div class="l-container">
                 <ol class="c-breadcrumbs__list">
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/" class="c-breadcrumbs__link">TOP</a>
+                        <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/service" class="c-breadcrumbs__link"
+                        <a href="<?php echo esc_url(home_url('service')); ?>" class="c-breadcrumbs__link"
                             aria-current="page">事業内容</a>
                     </li>
                 </ol>
@@ -62,7 +62,7 @@ Template Name: Service page
                                     私たちはこれまでお客様の安全を第一に考えて参りました。<br />建築事業では、そんな「安全」が「人」に伝えられるよう技術力を日々高めています。<br />自慢の技術を是非ご覧ください。
                                 </p>
                                 <div class="c-link__wrap">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/works/architecture"
+                                    <a href="<?php echo esc_url(home_url('construction/archi')); ?>"
                                         class="c-link -white">
                                         View more
                                         <span class="circle">
@@ -94,7 +94,7 @@ Template Name: Service page
                                     土木事業では、道路工事をはじめ、トンネル・高速道路の舗装工事や河川・ダムなどの工事など、私たちの生活の基盤の保護に努めております。<br />これからも、人々の社会をずっと支えてくれるように、守り続けて参ります。
                                 </p>
                                 <div class="c-link__wrap">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/works/civil"
+                                    <a href="<?php echo esc_url(home_url('construction/civil')); ?>"
                                         class="c-link -white">
                                         View more
                                         <span class="circle">
@@ -126,7 +126,7 @@ Template Name: Service page
                                     心地よい生活を続けていくためには、安心感のある家づくりが必要になってきます。<br />藤原建設工業では、どんなに小さなことでも、何年先でもお客様の「安心」が続くよう技術力を提供させていただきます。
                                 </p>
                                 <div class="c-link__wrap">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/works/housing"
+                                    <a href="<?php echo esc_url(home_url('construction/housing')); ?>"
                                         class="c-link -white">
                                         View more
                                         <span class="circle">
