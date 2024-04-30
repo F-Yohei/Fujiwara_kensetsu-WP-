@@ -563,7 +563,7 @@ Template Name: TOP page
                         <!-- ここにhtml -->
                         <li class="p-home-news__item">
                             <div class="p-home-news__itemBlock">
-                                <a href="#" class="p-home-news__itemLink">
+                                <a href="<?php the_permalink(); ?>" class="p-home-news__itemLink">
                                     <figure>
                                         <?php if (has_post_thumbnail()) :
                                                     the_post_thumbnail('large'); ?>
