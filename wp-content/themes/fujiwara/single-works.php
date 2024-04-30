@@ -128,7 +128,7 @@ Template Name: Works Detail page
                 <div class="p-works-detail__otherLinkInner">
                     <ul class="p-works-detail__otherLinkList">
                         <li class="p-works-detail__otherLinkItem">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/archi"
+                            <a href="<?php echo esc_url(home_url('construction/archi')); ?>"
                                 class="p-works-detail__otherLink js-works-cursor01 -cursorNone -archi">
                                 <span class="l-section__subTitle">Architecture<span>建築事業</span></span>
                                 <div class="c-link">
@@ -140,7 +140,7 @@ Template Name: Works Detail page
                             </a>
                         </li>
                         <li class="p-works-detail__otherLinkItem">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/civil"
+                            <a href="<?php echo esc_url(home_url('construction/civil')); ?>"
                                 class="p-works-detail__otherLink js-works-cursor02 -cursorNone -civil">
                                 <span class="l-section__subTitle">Civil engineering<span>土木事業</span></span>
                                 <div class="c-link">
@@ -152,7 +152,7 @@ Template Name: Works Detail page
                             </a>
                         </li>
                         <li class="p-works-detail__otherLinkItem">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works/housing"
+                            <a href="<?php echo esc_url(home_url('construction/housing')); ?>"
                                 class="p-works-detail__otherLink js-works-cursor03 -cursorNone -housing">
                                 <span class="l-section__subTitle">Housing<span>住宅事業</span></span>
                                 <div class="c-link">
@@ -166,7 +166,7 @@ Template Name: Works Detail page
                     </ul>
                 </div>
                 <div class="c-list-button__block">
-                    <a href="<?php echo get_template_directory_uri(); ?>/works" class="c-list-button">施工実績一覧へ</a>
+                    <a href="<?php echo esc_url(home_url('works')); ?>" class="c-list-button">施工実績一覧へ</a>
                 </div>
             </div>
         </section>
