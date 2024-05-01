@@ -71,7 +71,13 @@ Template Name: News page
                     <div class="p-news-archive__content">
                         <ul class="p-news-archive__list">
                             <?php
+                            $paged = (int) get_query_var('paged');
+                            $year = get_query_var('year');
+                            $monthnum = get_query_var('monthnum');
                             $args = array(
+                                'year' => $year,
+                                'monthnum' => $monthnum,
+                                'paged' => $paged,
                                 'post_type' => 'news', // 投稿タイプを指定
                                 'posts_per_page' => 12, // 表示する記事数
                             );
@@ -127,7 +133,7 @@ Template Name: News page
                     <aside class="p-news-archive__nav">
                         <h2 class="p-news-archive__navTitle">Archive</h2>
                         <ul class="p-news-archive__navList">
-                            <li class="p-news-archive__navItem">
+                            <!-- <li class="p-news-archive__navItem">
                                 <a href="" class="p-news-archive__navLink">2022年8月</a>
                             </li>
                             <li class="p-news-archive__navItem">
@@ -138,8 +144,17 @@ Template Name: News page
                             </li>
                             <li class="p-news-archive__navItem">
                                 <a href="" class="p-news-archive__navLink">2022年5月</a>
-                            </li>
+                            </li> -->
+                            <?php
+                            $string = wp_get_archives(array(
+                                'post_type'     => 'news',
+                                'show_post_count' => 1,
+                                'echo' => 0
+                            ));
+                            echo preg_replace('/<\/a >&nbsp;(\([0-9]*\))/', ' <span class="count">$1</span></a>', $string);
+                            ?>
                         </ul>
+
                     </aside>
                 </div>
             </div>
