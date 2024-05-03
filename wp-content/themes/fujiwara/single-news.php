@@ -118,8 +118,7 @@ Template Name: News Detail page
                                 ?>
                                 <!-- ここにhtml -->
                                 <li class="p-news-archive__item">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/news/detail"
-                                        class="p-news-archive__link">
+                                    <a href="<?php the_permalink(); ?>" class="p-news-archive__link">
                                         <figure>
                                             <?php if (has_post_thumbnail()) :
                                                         the_post_thumbnail('large'); ?>

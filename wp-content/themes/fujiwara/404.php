@@ -47,7 +47,7 @@ Template Name: 404 page
                         class="u-only-sp" />削除された可能性がございます。<br />大変お手数ですが、もう一度ナビゲーション<br
                         class="u-only-sp" />よりご希望のページをお探しください。</p>
                 <div class="p-contact__button">
-                    <a href="<?php echo get_template_directory_uri(); ?>/">トップへ戻る</a>
+                    <a href="<?php echo esc_url(home_url('')); ?>">トップへ戻る</a>
                 </div>
             </div>
         </div>
