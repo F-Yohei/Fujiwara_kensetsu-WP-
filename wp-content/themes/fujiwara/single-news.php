@@ -48,7 +48,8 @@ Template Name: News Detail page
                             </span>
                         </div>
                         <figure class="p-news-detail__eyecatch">
-                            <img src="../../assets/images/news/eyecatch_img.jpg" alt="" />
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/news/eyecatch_img.jpg"
+                                alt="" />
                             <?php if (has_post_thumbnail()) :
                                 the_post_thumbnail('large'); ?>
                             <?php
@@ -86,8 +87,9 @@ Template Name: News Detail page
                                     </li>
                                     <li class="p-news-detail__socialItem">
                                         <a title="クリップボードにURLをコピー" class="share-url p-news-detail__socialLink -copy"
-                                            href="javascript:void(0);" data-clipboard-text="../../"><span
-                                                class="icon"></span></a>
+                                            href="javascript:void(0);" data-clipboard-text="<?php the_permalink(); ?>">
+                                            <span class="icon"></span>
+                                        </a>
                                         <span class="url-copied">
                                             <span>URLをコピーしました！</span>
                                         </span>
@@ -114,7 +116,8 @@ Template Name: News Detail page
                                 ?>
                                 <!-- ここにhtml -->
                                 <li class="p-news-archive__item">
-                                    <a href="../../news/detail" class="p-news-archive__link">
+                                    <a href="<?php echo get_template_directory_uri(); ?>/news/detail"
+                                        class="p-news-archive__link">
                                         <figure>
                                             <?php if (has_post_thumbnail()) :
                                                         the_post_thumbnail('large'); ?>
@@ -155,13 +158,13 @@ Template Name: News Detail page
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
 <!-- gsap.min.js -->
-<script src="../../assets/js/gsap.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/gsap.min.js"></script>
 <!-- ScrollTrigger.min.js -->
-<script src="../../assets/js/ScrollTrigger.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/ScrollTrigger.min.js"></script>
 <!-- glightbox.min.js -->
-<script src="../../assets/js/glightbox.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/glightbox.min.js"></script>
 <!-- common.bundle.js -->
-<script src="../../assets/js/common.bundle.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.bundle.js"></script>
 <!-- IE object-fit -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.js"></script>
 <script>
@@ -172,7 +175,7 @@ objectFitImages();
 <!-- clipboard.min.js -->
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <!-- news.bundle.js -->
-<script src="../../assets/js/news.bundle.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/news.bundle.js"></script>
 </div>
 </body>
 
