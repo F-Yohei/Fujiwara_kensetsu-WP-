@@ -87,3 +87,15 @@ function pagination( $pages, $paged, $range = 2 ) {
   }
 }
 ?>
+
+
+<?php
+/*==============================================================
+archive-news.phpの月別アーカイブのliタグにクラス指定
+==============================================================*/
+function my_archives_link($link_html){
+$link_html = preg_replace('@<li>@i', '<li class="p-news-archive__navItem">', $link_html);
+return $link_html;
+}
+add_filter('get_archives_link', 'my_archives_link');
+?>
