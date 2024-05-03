@@ -48,8 +48,6 @@ Template Name: News Detail page
                             </span>
                         </div>
                         <figure class="p-news-detail__eyecatch">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/news/eyecatch_img.jpg"
-                                alt="" />
                             <?php if (has_post_thumbnail()) :
                                 the_post_thumbnail('large'); ?>
                             <?php
@@ -106,8 +104,12 @@ Template Name: News Detail page
                             <ul class="p-news-archive__list">
                                 <?php
                                 $args = array(
-                                    'post_type' => 'news', // 投稿タイプを指定
+                                    'post_type' => 'news', // カスタム投稿タイプを指定
                                     'posts_per_page' => 3, // 表示する記事数
+                                    'taxonomy' => 'news_category', //タクソノミー名
+                                    'term' => $term->slug,
+                                    'orderby' => 'rand', //ランダム表示
+                                    'post__not_in' => array($post->ID) //表示中の記事を除外
                                 );
                                 $news_query = new WP_Query($args);
                                 if ($news_query->have_posts()) :
@@ -131,13 +133,13 @@ Template Name: News Detail page
                                         </figure>
                                         <div class="p-news-archive__desc">
                                             <div class="p-news-archive__info">
-                                                <time>2022.02.24</time>
+                                                <time><?php the_time('Y.m.d') ?></time>
                                                 <span class="p-news-archive__tag">
                                                     <?php $terms = wp_get_object_terms($post->ID, 'news_category');
-                                                        foreach ($terms as $term) {
-                                                            echo  $term->name;
-                                                        }
-                                                        ?>
+                                                            foreach ($terms as $term) {
+                                                                echo  $term->name;
+                                                            }
+                                                            ?>
                                                 </span>
                                             </div>
                                             <h2 class="p-news-archive__title"><?php the_title(); ?></h2>
@@ -145,7 +147,8 @@ Template Name: News Detail page
                                     </a>
                                 </li>
                                 <?php endwhile;
-                                endif; wp_reset_postdata(); ?>
+                                endif;
+                                wp_reset_postdata(); ?>
                             </ul>
                         </div>
                 </article>
