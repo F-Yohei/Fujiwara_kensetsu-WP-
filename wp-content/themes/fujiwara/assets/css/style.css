@@ -1781,7 +1781,7 @@ body.is-active {
   /* 選択された時の内側のマルの色 */
 }
 
-.l-form__dd span input {
+.l-form__dd input {
   width: 100%;
   height: 6.4rem;
   padding: 2.1rem 2.4rem;
@@ -1789,11 +1789,11 @@ body.is-active {
   background: #f0f0f0;
 }
 
-.l-form__dd.-zip span input {
+.l-form__dd.-zip input {
   width: 60.2739%;
 }
 
-.l-form__dd.-file span input {
+.l-form__dd.-file input {
   padding: 1.7rem 2.4rem;
 }
 
@@ -1804,9 +1804,24 @@ body.is-active {
   align-items: center;
 }
 
-.l-form__dd.-radio .-flex:not(:last-child) {
+/* .l-form__dd.-radio :not(:last-child) {
   margin-right: 3.1rem;
+} */
+
+.l-form__dd .-radio>span:not(:last-child) {
+  margin-right: 26px;
 }
+
+.l-form__dd .-radio>span {
+  margin-left: 0;
+}
+
+
+.mw_wp_form .horizontal-item+.horizontal-item {
+  margin-left: 26px;
+}
+
+
 
 .l-form__dd textarea {
   width: 100%;
@@ -1844,6 +1859,15 @@ body.is-active {
 .l-form__dd input[type=radio]:checked:before {
   border: 2px solid #88b999;
   background: #88b999;
+}
+
+.mwform-radio-field label {
+  display: flex;
+  align-items: center;
+}
+
+.mwform-radio-field:not(:last-child) {
+  margin: 0;
 }
 
 .l-form__select {
@@ -1926,7 +1950,7 @@ body.is-active {
   text-align: center;
 }
 
-.l-form__submit input {
+.l-form__btn {
   -webkit-transition: all 0.5s ease;
   display: block;
   width: 100%;
@@ -1942,7 +1966,7 @@ body.is-active {
   transition: all 0.5s ease;
 }
 
-.l-form__submit:hover input {
+.l-form__submit:hover .l-form__btn {
   background: #fff;
   color: #111;
 }
@@ -6990,7 +7014,7 @@ button.swiper-pagination-bullet {
     width: 41.2739%;
   }
 
-  .l-form__dd.-zip span input {
+  .l-form__dd.-zip input {
     width: 41.2739%;
   }
 

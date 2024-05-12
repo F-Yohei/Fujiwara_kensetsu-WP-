@@ -51,8 +51,8 @@ Template Name: Contact page
                         <li class="p-contact__progressItem">確認</li>
                         <li class="p-contact__progressItem">完了</li>
                     </ul>
-                    <form class="l-form">
-                        <!-- <div class="l-form__list">
+                    <!-- <form class="l-form"> -->
+                    <!-- <div class="l-form__list">
                             <dl class="l-form__item">
                                 <dt class="l-form__dt">お問い合わせの種別</dt>
                                 <dd class="l-form__dd -select">
@@ -176,9 +176,9 @@ Template Name: Contact page
                             <input type="submit" value="内容の確認" class="l-form__btn" />
                         </div>
                         <input type="hidden" class="p-country-name" value="Japan"> -->
-                        <?php echo do_shortcode('[mwform_formkey key="91"]'); ?>
+                    <?php echo do_shortcode('[mwform_formkey key="91"]'); ?>
 
-                    </form>
+                    <!-- </form> -->
                 </div>
             </div>
         </section>
@@ -188,7 +188,6 @@ Template Name: Contact page
 <!-- /main -->
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
-
 <!-- gsap.min.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/gsap.min.js"></script>
 <!-- ScrollTrigger.min.js -->
