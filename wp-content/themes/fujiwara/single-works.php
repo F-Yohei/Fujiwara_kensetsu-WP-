@@ -2,10 +2,11 @@
 <?php get_header(); ?>
 <?php
 /*
-Template Name: Works Detail page
+Template Name: Works detail page
 */
 ?>
 <!-- main -->
+<!-- /header -->
 <!-- cusor-pointer -->
 <div id="js-cursor-img" class="p-cursor-img"></div>
 <div id="js-chaser-img" class="p-chaser-img">
@@ -35,14 +36,14 @@ Template Name: Works Detail page
             <div class="l-container">
                 <ol class="c-breadcrumbs__list">
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
+                        <a href="<?php echo get_template_directory_uri(); ?>/" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo esc_url(home_url('works')); ?>" class="c-breadcrumbs__link">施工実績</a>
+                        <a href="<?php echo get_template_directory_uri(); ?>/works" class="c-breadcrumbs__link">施工実績</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php the_permalink(); ?>" class="c-breadcrumbs__link"
-                            aria-current="page"><?php the_title(); ?></a>
+                        <a href="<?php echo get_template_directory_uri(); ?>/works/detail" class="c-breadcrumbs__link"
+                            aria-current="page">高等学校改修工事</a>
                     </li>
                 </ol>
             </div>
@@ -67,60 +68,87 @@ Template Name: Works Detail page
                     <div class="p-works-detail__content">
                         <h1 class="p-works-detail__title">高等学校改修工事</h1>
                         <div class="p-works-detail__info">
-                            <time><?php the_time('Y.m.d') ?></time>
-                            <span class="p-works-detail__tag">
-                                <?php $terms = wp_get_object_terms($post->ID, 'construction');
-                                foreach ($terms as $term) {
-                                    echo  $term->name;
-                                }
-                                ?>
-                            </span>
+                            <time>2022.02.24</time>
+                            <span class="p-works-detail__tag">建築</span>
                         </div>
                         <figure class="p-works-detail__eyecatch">
-                            <?php if (has_post_thumbnail()) :
-                                the_post_thumbnail('large'); ?>
-                            <?php
-                            else :
-                            ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/no-image.png"
-                                alt="アイキャッチ画像がありません" />
-                            <?php
-                            endif; ?>
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/eyecatch_img.jpg"
+                                alt="" />
                         </figure>
                         <div id="item01" class="p-works-detail__block js-block01">
                             <h2 class="p-works-detail__blockTitle">概要</h2>
                             <p class="l-section__text">
-                                <?php echo CFS()->get('worksOutline'); ?>
+                                県内の高等学校の改修工事を行いました。<br />歴史ある高等学校ということで、これまでの歴史を振り返られる部分は残しつつ、今後も長く存在し続けられるよう、地盤強化を施させていただきました。<br />“安全に過ごせる”を当たり前に、そんな当たり前を自信持って提供し続けられるよう技術を高め続けて参ります。
                             </p>
                         </div>
                         <div id="item02" class="p-works-detail__block js-block02">
                             <h2 class="p-works-detail__blockTitle">ギャラリー</h2>
                             <ul class="p-works-detail__gallery">
-                                <?php
-                                $fields = CFS()->get('worksGallery');
-                                foreach ($fields as $field) :
-                                ?>
                                 <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo $field['worksGalleryImg']; ?>"
+                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img01.jpg"
                                         class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
-                                        <figure><img src="<?php echo $field['worksGalleryImg']; ?>" alt="" /></figure>
+                                        <figure><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img01_small.jpg"
+                                                alt="" />
+                                        </figure>
                                     </a>
                                 </li>
-                                <?php endforeach; ?>
+                                <li class="p-works-detail__galleryItem">
+                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img02.jpg"
+                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
+                                        <figure><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img02_small.jpg"
+                                                alt="" />
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="p-works-detail__galleryItem">
+                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img03.jpg"
+                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
+                                        <figure><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img03_small.jpg"
+                                                alt="" />
+                                        </figure>
+                                    </a>
+                                </li>
+                                <li class="p-works-detail__galleryItem">
+                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img04.jpg"
+                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
+                                        <figure><img
+                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img04_small.jpg"
+                                                alt="" />
+                                        </figure>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         <div id="item03" class="p-works-detail__block js-block03">
                             <h2 class="p-works-detail__blockTitle">工事内容</h2>
                             <dl class="l-section-list">
-                                <?php
-                                $fields = CFS()->get('Workscontents');
-                                foreach ($fields as $field) :
-                                ?>
                                 <div class="l-section-list__row">
-                                    <dt class="l-section-list__item"><?php echo $field['WorkscontentsName']; ?></dt>
-                                    <dd class="l-section-list__desc"><?php echo $field['WorkscontentsDesc']; ?></dd>
+                                    <dt class="l-section-list__item">竣工</dt>
+                                    <dd class="l-section-list__desc">2022年2月11日</dd>
                                 </div>
-                                <?php endforeach; ?>
+                                <div class="l-section-list__row">
+                                    <dt class="l-section-list__item">工事名</dt>
+                                    <dd class="l-section-list__desc">千葉県立◯◯高等学校改修工事</dd>
+                                </div>
+                                <div class="l-section-list__row">
+                                    <dt class="l-section-list__item">発注者</dt>
+                                    <dd class="l-section-list__desc">千葉県◯◯市　◯◯部</dd>
+                                </div>
+                                <div class="l-section-list__row">
+                                    <dt class="l-section-list__item">設計</dt>
+                                    <dd class="l-section-list__desc">（株）◯◯設計事務所</dd>
+                                </div>
+                                <div class="l-section-list__row">
+                                    <dt class="l-section-list__item">担当</dt>
+                                    <dd class="l-section-list__desc">藤原建設工業</dd>
+                                </div>
+                                <div class="l-section-list__row">
+                                    <dt class="l-section-list__item">詳細</dt>
+                                    <dd class="l-section-list__desc">校舎・屋上　一式改修工事<br />外壁・内部改修、塗装など</dd>
+                                </div>
                             </dl>
                         </div>
                     </div>
@@ -166,7 +194,7 @@ Template Name: Works Detail page
                     </ul>
                 </div>
                 <div class="c-list-button__block">
-                    <a href="<?php echo esc_url(home_url('works')); ?>" class="c-list-button">施工実績一覧へ</a>
+                    <a href="<?php echo get_template_directory_uri(); ?>/works" class="c-list-button">施工実績一覧へ</a>
                 </div>
             </div>
         </section>
@@ -174,8 +202,82 @@ Template Name: Works Detail page
     </article>
 </main>
 <!-- /main -->
-<!-- footer呼び出し -->
-<?php get_footer(); ?>
+<!-- footer -->
+<div class="l-footer__contact">
+    <div class="l-footer__contactInner">
+        <div class="l-footer__contactBlock">
+            <a href="<?php echo get_template_directory_uri(); ?>/contact" class="l-footer__contactLink -contact">
+                <h2 class="l-footer__contactTitle">Contact<span>お問い合わせ</span></h2>
+                <div class="l-footer__contactBg"></div>
+            </a>
+        </div>
+        <div class="l-footer__contactBlock">
+            <a href="<?php echo get_template_directory_uri(); ?>/recruit" class="l-footer__contactLink -recruit">
+                <h2 class="l-footer__contactTitle">Recruit<span>採用情報</span></h2>
+                <div class="l-footer__contactBg"></div>
+            </a>
+        </div>
+    </div>
+</div>
+<footer class="l-footer">
+    <div class="l-container">
+        <div class="l-footer__detail">
+            <nav class="l-footer__nav">
+                <ul class="l-footer__navList">
+                    <li class="l-footer__navItem">
+                        <a href="<?php echo get_template_directory_uri(); ?>/company"
+                            class="l-footer__navLink">COMPANY</a>
+                    </li>
+                    <li class="l-footer__navItem">
+                        <a href="<?php echo get_template_directory_uri(); ?>/service"
+                            class="l-footer__navLink">SERVICE</a>
+                    </li>
+                    <li class="l-footer__navItem">
+                        <a href="<?php echo get_template_directory_uri(); ?>/works" class="l-footer__navLink">WORKS</a>
+                    </li>
+                    <li class="l-footer__navItem">
+                        <a href="<?php echo get_template_directory_uri(); ?>/news" class="l-footer__navLink">NEWS</a>
+                    </li>
+                    <li class="l-footer__navItem">
+                        <a href="<?php echo get_template_directory_uri(); ?>/contact"
+                            class="l-footer__navLink">CONTACT</a>
+                    </li>
+                    <li class="l-footer__navItem">
+                        <a href="<?php echo get_template_directory_uri(); ?>/recruit"
+                            class="l-footer__navLink">RECRUIT</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="l-footer__company">
+                <a href="<?php echo get_template_directory_uri(); ?>/" class="l-header__logoLink">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/footer_logo.svg"
+                        alt="藤原建設工業株式会社" />
+                </a>
+                <div class="l-footer__access">
+                    <p class="l-footer__accessTitle">Access</p>
+                    <address>
+                        藤原建設工業株式会社 本社<br>
+                        〒000-0000 千葉県◯◯市◯◯丁目◯◯番<br>
+                        <a href="tel:00-0000-0000">TEL 00-0000-0000</a>
+                    </address>
+                </div>
+            </div>
+        </div>
+        <div class="l-footer__pageTop">
+            <a href="#top">
+                <div class="circle">
+                    <span class="arrow"></span>
+                </div>
+            </a>
+        </div>
+        <div class="l-footer__policy">
+            <a href="<?php echo get_template_directory_uri(); ?>/privacy" class="l-footer__policy__link">Privacy
+                Policy</a>
+            <p class="l-footer__policyText">© 1995 Fujiwara Construction Industry. Co., Ltd.</p>
+        </div>
+    </div>
+</footer>
+<!-- /footer -->
 <!-- TweenMax.min.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/TweenMax.min.js"></script>
 <!-- worksCursor.js -->
@@ -197,7 +299,8 @@ objectFitImages();
 <script src="https://polyfill.io/v3/polyfill.min.js?features=HTMLPictureElement"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.6.0.min.js"></script>
 <!-- glightbox.min.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript">
+</script>
 </div>
 </body>
 

@@ -74,15 +74,18 @@ Template Name: Works Category page
                 <div class="p-works-archive__inner">
                     <ul class="p-works-archive__list">
                         <?php
-                        $args = array(
-                            'post_type' => 'works', // 投稿タイプを指定
-                            'posts_per_page' => 12, // 表示する記事数
-                        );
-                        $news_query = new WP_Query($args);
-                        if ($news_query->have_posts()) :
-                            while ($news_query->have_posts()) :
-                                $news_query->the_post();
-                        ?>
+                        $count = 1;
+                        $args = [
+                            'post_type' =>
+                            array('works'),
+                            'posts_per_page' => 15,
+                            'paged' => get_query_var('paged'),
+                        ];
+
+                        $my_query = new WP_Query($args);
+                        if ($my_query->have_posts()) :
+                            while ($my_query->have_posts()) :
+                                $my_query->the_post(); ?>
                         <!-- ここにhtml -->
                         <li class="p-works-archive__item">
                             <a href="<?php the_permalink(); ?>" class="p-works-archive__link">

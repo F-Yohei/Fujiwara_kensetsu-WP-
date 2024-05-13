@@ -56,7 +56,7 @@
                 <nav id="js-menu" class="l-menu">
                     <ul class="l-menu__list">
                         <li class="l-menu__item">
-                            <a href="./" class="l-menu__link">TOP</a>
+                            <a href="<?php echo esc_url(home_url('')); ?>" class="l-menu__link">TOP</a>
                         </li>
                         <li class="l-menu__item">
                             <a href="<?php echo esc_url(home_url('company')); ?>" class="l-menu__link">COMPANY</a>
