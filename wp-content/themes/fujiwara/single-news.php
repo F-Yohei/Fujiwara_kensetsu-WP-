@@ -111,6 +111,7 @@ Template Name: News detail page
                                 'numberposts' => 3, //８件表示(デフォルトは５件)
                                 'post_type' => 'news', //カスタム投稿タイプ名
                                 'taxonomy' => 'news_category', //タクソノミー名 ←ここが追加
+                                'term' => $term->slug,
                                 'orderby' => 'rand', //ランダム表示
                                 'post__not_in' => array($post->ID) //表示中の記事を除外
                             );
@@ -133,7 +134,7 @@ Template Name: News detail page
                                     </figure>
                                     <div class="p-news-archive__desc">
                                         <div class="p-news-archive__info">
-                                            <time>2022.02.24</time>
+                                            <time><?php the_time('Y.m.d') ?></time>
                                             <span class="p-news-archive__tag">
                                                 <?php
                                                         $terms = wp_get_object_terms($post->ID, 'news_category');
