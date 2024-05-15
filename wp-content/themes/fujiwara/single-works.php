@@ -42,7 +42,8 @@ Template Name: Works detail page
                         <a href="<?php echo esc_url(home_url('works')); ?>" class="c-breadcrumbs__link">施工実績</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php the_permalink(); ?>" class="c-breadcrumbs__link" aria-current="page">高等学校改修工事</a>
+                        <a href="<?php the_permalink(); ?>" class="c-breadcrumbs__link"
+                            aria-current="page"><?php the_title() ?></a>
                     </li>
                 </ol>
             </div>
@@ -65,10 +66,17 @@ Template Name: Works detail page
                         </ul>
                     </nav>
                     <div class="p-works-detail__content">
-                        <h1 class="p-works-detail__title">高等学校改修工事</h1>
+                        <h1 class="p-works-detail__title"><?php the_title() ?></h1>
                         <div class="p-works-detail__info">
                             <time>2022.02.24</time>
-                            <span class="p-works-detail__tag">建築</span>
+                            <span class="p-works-detail__tag">
+                                <?php
+                                $terms = wp_get_object_terms($post->ID, 'construction');
+                                foreach ($terms as $term) {
+                                    echo  $term->name;
+                                }
+                                ?>
+                            </span>
                         </div>
                         <figure class="p-works-detail__eyecatch">
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/eyecatch_img.jpg"
@@ -193,7 +201,7 @@ Template Name: Works detail page
                     </ul>
                 </div>
                 <div class="c-list-button__block">
-                    <a href="<?php echo get_template_directory_uri(); ?>/works" class="c-list-button">施工実績一覧へ</a>
+                    <a href="<?php echo esc_url(home_url('works')); ?>" class="c-list-button">施工実績一覧へ</a>
                 </div>
             </div>
         </section>
@@ -215,6 +223,8 @@ Template Name: Works detail page
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/glightbox.min.js"></script>
 <!-- common.bundle.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.bundle.js"></script>
+<!-- worksdetail.bundle.js -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/worksdetail.bundle.js"></script>
 <!-- IE object-fit -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.js"></script>
 <script>

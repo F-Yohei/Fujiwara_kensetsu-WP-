@@ -42,7 +42,7 @@ Template Name: Works Category page
                     <h2 class="c-archive-nav__title">Category</h2>
                     <ul class="c-archive-nav__list">
                         <li class="c-archive-nav__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/works"
+                            <a href="<?php echo esc_url(home_url('works')); ?>"
                                 class="c-archive-nav__link -current">全て</a>
                         </li>
                         <?php
