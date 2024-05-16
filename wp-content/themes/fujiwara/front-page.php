@@ -31,13 +31,13 @@ Template Name: TOP page
     <div class="p-fixed-button">
         <ul class="p-fixed-button__list">
             <li class="p-fixed-button__item">
-                <a href="./entry" class="p-fixed-button__link -entry">ENTRY</a>
+                <a href="<?php echo esc_url(home_url('entry')); ?>" class="p-fixed-button__link -entry">ENTRY</a>
             </li>
             <li class="p-fixed-button__item">
-                <a href="./recruit" class="p-fixed-button__link -recruit">RECRUIT</a>
+                <a href="<?php echo esc_url(home_url('recruit')); ?>" class="p-fixed-button__link -recruit">RECRUIT</a>
             </li>
             <li class="p-fixed-button__item">
-                <a href="./contact" class="p-fixed-button__link -contact">CONTACT</a>
+                <a href="<?php echo esc_url(home_url('contact')); ?>" class="p-fixed-button__link -contact">CONTACT</a>
             </li>
         </ul>
     </div>
@@ -591,7 +591,7 @@ Template Name: TOP page
                         wp_reset_postdata(); ?>
                     </ul>
                     <div class="c-link__wrap">
-                        <a href="<?php echo esc_url(home_url('works')); ?>" class="c-link">
+                        <a href="<?php echo esc_url(home_url('news')); ?>" class="c-link">
                             View more
                             <span class="circle">
                                 <span class="arrow"></span>
