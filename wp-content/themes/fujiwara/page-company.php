@@ -29,10 +29,11 @@ Template Name: Company page
             <div class="l-container">
                 <ul class="c-breadcrumbs__list">
                     <li class="c-breadcrumbs__item">
-                        <a href="../" class="c-breadcrumbs__link">TOP</a>
+                        <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="../company" class="c-breadcrumbs__link" aria-current="page">会社情報</a>
+                        <a href="<?php echo esc_url(home_url('company')); ?>" class="c-breadcrumbs__link"
+                            aria-current="page">会社情報</a>
                     </li>
                 </ul>
             </div>
@@ -141,21 +142,7 @@ Template Name: Company page
 <!-- /main -->
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
-<!-- gsap.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/gsap.min.js"></script>
-<!-- ScrollTrigger.min.js -->
-<!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/ScrollTrigger.min.js"></script> -->
-<!-- glightbox.min.js -->
-<!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/glightbox.min.js"></script> -->
+
 <!-- common.bundle.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.bundle.js"></script>
-<!-- IE object-fit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.js"></script>
-
-
-<script>
-objectFitImages();
-</script>
-<!-- polyfill(picture IE) -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=HTMLPictureElement"></script>
 </div>
