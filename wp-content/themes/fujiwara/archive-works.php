@@ -102,7 +102,6 @@ Template Name: Works Category page
                                                 echo '-' . $term->slug . ' ';
                                             }
                                             ?>">
-
                                         <?php
                                                 $terms = wp_get_object_terms($post->ID, 'construction');
                                                 foreach ($terms as $term) {
@@ -117,26 +116,20 @@ Template Name: Works Category page
                                 </div>
                             </a>
                         </li>
-                        <?php endwhile;
-                        endif;
-                        wp_reset_postdata(); ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
                     </ul>
                     <div class="c-list-button__block">
                         <button type="button" class="c-list-button -eng">View More</button>
                     </div>
                     <!-- pagination -->
-                    <div class="c-pagination">
-                        <div class="c-pagination__inner">
-                            <a href="" class="c-pagination__arrow -prev"><span class="arrow"></span></a>
-                            <a href="" class="c-pagination__numbers">1</a>
-                            <a href="" class="c-pagination__numbers -current">2</a>
-                            <a href="" class="c-pagination__numbers">3</a>
-                            <a href="" class="c-pagination__numbers -ellipsis">…</a>
-                            <a href="" class="c-pagination__numbers">10</a>
-                            <a href="" class="c-pagination__arrow -next"><span class="arrow"></span></a>
-                        </div>
-                    </div>
-                    <!-- /pagination -->
+                    <?php
+                    if (function_exists('pagination')) :
+                        pagination($my_query->max_num_pages, $paged);
+                    endif;
+                    ?>
+                    <?php wp_reset_postdata(); ?>
+
                 </div>
             </div>
         </section>
