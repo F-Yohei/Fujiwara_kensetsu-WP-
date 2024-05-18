@@ -129,7 +129,6 @@ Template Name: Works Category page
                     endif;
                     ?>
                     <?php wp_reset_postdata(); ?>
-
                 </div>
             </div>
         </section>

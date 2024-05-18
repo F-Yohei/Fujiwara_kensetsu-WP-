@@ -26,10 +26,10 @@ Template Name: News page
             <div class="l-container">
                 <ul class="c-breadcrumbs__list">
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/" class="c-breadcrumbs__link">TOP</a>
+                        <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/company" class="c-breadcrumbs__link"
+                        <a href="<?php echo esc_url(home_url('news')); ?>" class="c-breadcrumbs__link"
                             aria-current="page">新着情報</a>
                     </li>
                 </ul>
@@ -42,7 +42,7 @@ Template Name: News page
                     <h2 class="c-archive-nav__title">Category</h2>
                     <ul class="c-archive-nav__list">
                         <li class="c-archive-nav__item">
-                            <a href="<?php echo get_template_directory_uri(); ?>/news"
+                            <a href="<?php echo esc_url(home_url('news')); ?>"
                                 class="c-archive-nav__link -current">全て</a>
                         </li>
                         <?php
@@ -79,7 +79,7 @@ Template Name: News page
                                 'monthnum' => $monthnum,
                                 'paged' => $paged,
                                 'post_type' => 'news', // 投稿タイプを指定
-                                'posts_per_page' => 12, // 表示する記事数
+                                'posts_per_page' => 5, // 表示する記事数
                             );
                             $news_query = new WP_Query($args);
                             if ($news_query->have_posts()) :
@@ -112,23 +112,16 @@ Template Name: News page
                                     </div>
                                 </a>
                             </li>
-                            <?php endwhile;
-                            endif;
-                            wp_reset_postdata(); ?>
+                            <?php endwhile; ?>
+                            <?php endif; ?>
                         </ul>
                         <!-- pagination -->
-                        <div class="c-pagination">
-                            <div class="c-pagination__inner">
-                                <a href="" class="c-pagination__arrow -prev"><span class="arrow"></span></a>
-                                <a href="" class="c-pagination__numbers">1</a>
-                                <a href="" class="c-pagination__numbers -current">2</a>
-                                <a href="" class="c-pagination__numbers">3</a>
-                                <a href="" class="c-pagination__numbers -ellipsis">…</a>
-                                <a href="" class="c-pagination__numbers">10</a>
-                                <a href="" class="c-pagination__arrow -next"><span class="arrow"></span></a>
-                            </div>
-                        </div>
-                        <!-- /pagination -->
+                        <?php
+                    if (function_exists('pagination')) :
+                        pagination($my_query->max_num_pages, $paged);
+                    endif;
+                    ?>
+                        <?php wp_reset_postdata(); ?>
                     </div>
                     <aside class="p-news-archive__nav">
                         <h2 class="p-news-archive__navTitle">Archive</h2>
