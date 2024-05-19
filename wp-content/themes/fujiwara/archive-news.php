@@ -84,8 +84,7 @@ Template Name: News page
                             $news_query = new WP_Query($args);
                             if ($news_query->have_posts()) :
                                 while ($news_query->have_posts()) :
-                                    $news_query->the_post();
-                            ?>
+                                    $news_query->the_post(); ?>
                             <!-- ここにhtml -->
                             <li class="p-news-archive__item">
                                 <a href="<?php the_permalink(); ?>" class="p-news-archive__link">
@@ -117,10 +116,10 @@ Template Name: News page
                         </ul>
                         <!-- pagination -->
                         <?php
-                    if (function_exists('pagination')) :
-                        pagination($my_query->max_num_pages, $paged);
-                    endif;
-                    ?>
+                        if (function_exists('pagination')) :
+                            pagination($news_query->max_num_pages, $paged);
+                        endif;
+                        ?>
                         <?php wp_reset_postdata(); ?>
                     </div>
                     <aside class="p-news-archive__nav">

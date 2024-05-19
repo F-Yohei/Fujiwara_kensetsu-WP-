@@ -58,7 +58,14 @@ return $classes;
 /*==============================================================
 ページネーション
 ==============================================================*/
-function pagination( $pages, $paged, $range = 2 ) {
+/**
+* ページネーション出力関数
+* $paged : 現在のページ
+* $pages : 全ページ数
+* $range : 左右に何ページ表示するか
+* $show_only : 1ページしかない時に表示するかどうか
+*/
+function pagination( $pages, $paged, $range = 3,$show_only = false ) {
   $pages = ( int ) $pages;
   $paged = $paged ?: 1;
   $text_before  = "‹";
