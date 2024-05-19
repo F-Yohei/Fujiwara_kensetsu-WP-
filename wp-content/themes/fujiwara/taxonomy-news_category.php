@@ -126,7 +126,7 @@ Template Name: News page
                         <!-- pagination -->
                         <?php
                         if (function_exists('pagination')) :
-                            pagination($my_query->max_num_pages, $paged);
+                            pagination($news_query->max_num_pages, $paged);
                         endif;
                         ?>
                         <?php wp_reset_postdata(); ?>
