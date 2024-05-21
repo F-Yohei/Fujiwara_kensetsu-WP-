@@ -15,7 +15,7 @@ $classes[] = 'subpage';
 $classes[] = 'subpage';
 } elseif (is_page('contact')) {
 $classes[] = 'subpage';
-} elseif (is_page('contact-confirm')) {
+} elseif (is_page('confirm')) {
 $classes[] = 'subpage';
 $classes[] = 'confirm';
 } elseif (is_page('contact-thx')) {

@@ -508,7 +508,7 @@ body.contact .c-breadcrumbs .c-breadcrumbs__list .c-breadcrumbs__item .c-breadcr
   content: "";
 }
 
-.c-breadcrumbs__item:not(:last-child) {
+.c-breadcrumbs__item:not(:last-child)>.c-breadcrumbs__link {
   border-bottom: 1px solid #111;
 }
 
@@ -1954,9 +1954,9 @@ body.is-active {
   -webkit-transition: all 0.5s ease;
   display: block;
   width: 100%;
-  padding: 2.4rem 0;
-  border: 1px solid #111;
-  background: #111;
+  padding: 2.4rem 0 !important;
+  border: 1px solid #111 !important;
+  background: #111 !important;
   color: #fff;
   font-weight: 600;
   font-size: 1.6rem;
@@ -1967,7 +1967,7 @@ body.is-active {
 }
 
 .l-form__submit:hover .l-form__btn {
-  background: #fff;
+  background: #fff !important;
   color: #111;
 }
 
