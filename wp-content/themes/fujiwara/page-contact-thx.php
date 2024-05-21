@@ -24,8 +24,8 @@ Template Name: Contact Thanks page
                         <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo esc_url(home_url('contact/contact-thx')); ?>contact/thx"
-                            class="c-breadcrumbs__link" aria-current="page">お問い合わせありがとうございました</a>
+                        <a href="<?php echo esc_url(home_url('contact-thx')); ?>" class="c-breadcrumbs__link"
+                            aria-current="page">お問い合わせありがとうございました</a>
                     </li>
                 </ol>
             </div>
