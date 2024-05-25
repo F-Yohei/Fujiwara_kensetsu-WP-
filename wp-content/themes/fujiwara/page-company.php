@@ -146,6 +146,8 @@ Template Name: Company page
 
 <!-- gsap.min.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/gsap.min.js"></script>
+<!-- ScrollTrigger.min.js -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/ScrollTrigger.min.js"></script>
 <!-- common.bundle.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.bundle.js"></script>
 <!-- IE object-fit -->

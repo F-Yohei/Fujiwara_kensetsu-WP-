@@ -5,6 +5,7 @@
 Template Name: Works Category page
 */
 ?>
+<!-- /header -->
 <!-- main -->
 <main id="top" class="l-main">
     <article class="l-section">

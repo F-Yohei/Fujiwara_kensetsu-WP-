@@ -5,6 +5,7 @@
 Template Name: Works Category page
 */
 ?>
+<!-- /header -->
 <!-- main -->
 <main id="top" class="l-main">
     <article class="l-section">
@@ -146,3 +147,9 @@ Template Name: Works Category page
 <!-- /main -->
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
+<!-- gsap.min.js -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/gsap.min.js"></script>
+<!-- ScrollTrigger.min.js -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/ScrollTrigger.min.js"></script>
+<!-- common.bundle.js -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.bundle.js"></script>
