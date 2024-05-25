@@ -2,7 +2,7 @@
 <?php get_header(); ?>
 <?php
 /*
-Template Name: Entry page
+Template Name: Entry confirm page
 */
 ?>
 <!-- main -->
@@ -29,6 +29,10 @@ Template Name: Entry page
                         <a href="<?php echo esc_url(home_url('entry')); ?>" class="c-breadcrumbs__link"
                             aria-current="page">エントリー</a>
                     </li>
+                    <li class="c-breadcrumbs__item">
+                        <a href="<?php echo esc_url(home_url('entry-confirm')); ?>" class="c-breadcrumbs__link"
+                            aria-current="page">エントリー（確認）</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -46,8 +50,8 @@ Template Name: Entry page
                         <p class="l-section__text">※全て必須項目となっております。<br />※最後まで入力した後、送信ボタンを押してください。</p>
                     </div>
                     <ul class="p-contact__progress">
-                        <li class="p-contact__progressItem -current">入力</li>
-                        <li class="p-contact__progressItem">確認</li>
+                        <li class="p-contact__progressItem">入力</li>
+                        <li class="p-contact__progressItem -current">確認</li>
                         <li class="p-contact__progressItem">完了</li>
                     </ul>
                     <?php echo do_shortcode('[mwform_formkey key="185"]'); ?>
