@@ -49,49 +49,50 @@ Template Name: Entry page
                         <li class="p-contact__progressItem">確認</li>
                         <li class="p-contact__progressItem">完了</li>
                     </ul>
+                    <?php echo do_shortcode('[mwform_formkey key="185"]'); ?>
                     <div class="l-form">
-                        <dl class="l-form__list">
-                            <div class="l-form__item">
+                        <div class="l-form__list">
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">お名前</dt>
                                 <dd class="l-form__dd">
                                     <span>
                                         <input type="text" name="" placeholder="" required="" class="" />
                                     </span>
                                 </dd>
-                            </div>
-                            <div class="l-form__item">
+                            </dl>
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">フリガナ</dt>
                                 <dd class="l-form__dd">
                                     <span>
                                         <input type="text" name="" placeholder="" required="" class="" />
                                     </span>
                                 </dd>
-                            </div>
-                            <div class="l-form__item">
+                            </dl>
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">生年月日</dt>
                                 <dd class="l-form__dd">
                                     <span>
                                         <input type="text" name="" placeholder="" required="" class="" />
                                     </span>
                                 </dd>
-                            </div>
-                            <div class="l-form__item">
+                            </dl>
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">メールアドレス</dt>
                                 <dd class="l-form__dd">
                                     <span>
                                         <input type="text" name="" placeholder="" required="" class="" />
                                     </span>
                                 </dd>
-                            </div>
-                            <div class="l-form__item">
+                            </dl>
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">電話番号</dt>
                                 <dd class="l-form__dd">
                                     <span>
                                         <input type="text" name="" placeholder="" required="" class="" />
                                     </span>
                                 </dd>
-                            </div>
-                            <div class="l-form__item">
+                            </dl>
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">郵便番号</dt>
                                 <dd class="l-form__dd">
                                     <span>
@@ -99,31 +100,31 @@ Template Name: Entry page
                                             onKeyUp="AjaxZip3.zip2addr( this, '', '都道府県', '市区町村', 'town' );" />
                                     </span>
                                 </dd>
-                            </div>
-                            <div class="l-form__item">
+                            </dl>
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">都道府県</dt>
                                 <dd class="l-form__dd">
                                     <span>
                                         <input type="text" name="都道府県" placeholder="" required="" class="" />
                                     </span>
                                 </dd>
-                            </div>
-                            <div class="l-form__item">
+                            </dl>
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">市区町村</dt>
                                 <dd class="l-form__dd">
                                     <span>
                                         <input type="text" name="市区町村" placeholder="" required="" class="" />
                                     </span>
                                 </dd>
-                            </div>
-                            <div class="l-form__item">
+                            </dl>
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">番地・建物名</dt>
                                 <dd class="l-form__dd">
                                     <span>
                                         <input type="text" name="番地・建物名" placeholder="" required="" class="" />
                                     </span>
                                 </dd>
-                            </div>
+                            </dl>
                             <div class="l-form__item -radio">
                                 <dt class="l-form__dt">希望職種</dt>
                                 <dd class="l-form__dd -radio">
@@ -142,21 +143,21 @@ Template Name: Entry page
                                     </span>
                                 </dd>
                             </div>
-                            <div class="l-form__item">
+                            <dl class="l-form__item">
                                 <dt class="l-form__dt">職務履歴書</dt>
                                 <dd class="l-form__dd -file">
                                     <span>
                                         <input type="file" name="" required="" class="" />
                                     </span>
                                 </dd>
-                            </div>
+                            </dl>
                             <div class="l-form__item -message">
                                 <dt class="l-form__dt">その他ご質問</dt>
                                 <dd class="l-form__dd">
                                     <textarea name="" placeholder="" required="" class=""></textarea>
                                 </dd>
                             </div>
-                        </dl>
+                        </div>
                         <span class="l-form__privacy">
                             <label>
                                 <input type="checkbox" name="" value="1" />
@@ -192,7 +193,7 @@ objectFitImages();
 <!-- polyfill(picture IE) -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=HTMLPictureElement"></script>
 <!-- jquery -->
-<script src="../assets/js/jquery-3.6.0.min.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.6.0.min.js"></script>
 <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
 </div>
 </body>

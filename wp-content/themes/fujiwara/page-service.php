@@ -5,7 +5,6 @@
 Template Name: Service page
 */
 ?>
-<!-- main -->
 <!-- /header -->
 <!-- main -->
 <main id="top" class="l-main">

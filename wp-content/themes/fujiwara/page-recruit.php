@@ -181,7 +181,7 @@ Template Name: Recruit page
                             </div>
                         </dl>
                         <div class="c-list-button__block">
-                            <a href="<?php echo get_template_directory_uri(); ?>/entry" class="c-list-button">エントリー</a>
+                            <a href="<?php echo esc_url(home_url('entry')); ?>" class="c-list-button">エントリー</a>
                         </div>
                     </div>
                     <div id="menuId02" class="p-recruit-desc__content">
@@ -225,7 +225,7 @@ Template Name: Recruit page
                             </div>
                         </dl>
                         <div class="c-list-button__block">
-                            <a href="<?php echo get_template_directory_uri(); ?>/entry" class="c-list-button">エントリー</a>
+                            <a href="<?php echo esc_url(home_url('entry')); ?>" class="c-list-button">エントリー</a>
                         </div>
                     </div>
                     <div id="menuId03" class="p-recruit-desc__content">

@@ -5,6 +5,7 @@
 Template Name: Company page
 */
 ?>
+<!-- /header -->
 <!-- main -->
 <main id="top" class="l-main">
     <article class="l-section">
@@ -143,6 +144,14 @@ Template Name: Company page
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
 
+<!-- gsap.min.js -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/gsap.min.js"></script>
 <!-- common.bundle.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.bundle.js"></script>
-</div>
+<!-- IE object-fit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.js"></script>
+<script>
+objectFitImages();
+</script>
+<!-- polyfill(picture IE) -->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=HTMLPictureElement"></script>

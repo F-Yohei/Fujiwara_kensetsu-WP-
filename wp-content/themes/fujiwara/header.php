@@ -12,9 +12,10 @@
     <meta name="keywords" content="" />
     <link rel="canonical" href="./" />
     <!-- favicon -->
-    <link rel="shortcut icon" href="./assets/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon.ico" />
     <!-- apple-touch-icon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-touch-icon.png" />
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
