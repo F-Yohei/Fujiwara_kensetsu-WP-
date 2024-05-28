@@ -28,7 +28,6 @@
         integrity="sha384-xRa5B8rCDfdg0npZcxAh+RXswrbFk3g6dlHVeABeluN8EIwdyljz/LqJgc2R3KNA" crossorigin="anonymous"
         defer></script>
     <?php wp_head(); ?>
-
 </head>
 
 <body id="js-body" <?php body_class(); ?>>

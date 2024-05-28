@@ -148,10 +148,10 @@ Template Name: News page
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/gsap.min.js"></script>
 <!-- ScrollTrigger.min.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/ScrollTrigger.min.js"></script>
-<!-- glightbox.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/glightbox.min.js"></script>
 <!-- common.bundle.js -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.bundle.js"></script>
+<!-- news.bundle.js -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/news.bundle.js"></script>
 <!-- IE object-fit -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.js"></script>
 <script>
@@ -159,7 +159,3 @@ objectFitImages();
 </script>
 <!-- polyfill(picture IE) -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=HTMLPictureElement"></script>
-<!-- clipboard.min.js -->
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
-<!-- news.bundle.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/news.bundle.js"></script>
