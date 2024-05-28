@@ -129,10 +129,11 @@ mvwpform_autop_filter();
 
 <?php
 /*==============================================================
-カスタム投稿（News）のパーマリンクをpaegIDに変更
+カスタム投稿タイプのパーマリンクをIDに
+・新着情報
 ==============================================================*/
-add_filter('post_type_link', 'custom_post_link', 1, 2);
-function custom_post_link($link, $post) {
+add_filter('post_type_link', 'news_post_link', 1, 2);
+function news_post_link($link, $post) {
   if($post -> post_type === 'news') {
     // カスタム投稿名が"news"の投稿のパーマリンクを「/news/投稿ID/」の形に書き換え
     return home_url('/news/'.$post->ID);
@@ -142,8 +143,8 @@ function custom_post_link($link, $post) {
 }
 
 //書き換えたパーマリンクに対応したリライトルールを追加
-add_filter('rewrite_rules_array', 'custom_post_link_rewrite');
-function custom_post_link_rewrite($rules) {
+add_filter('rewrite_rules_array', 'news_post_link_rewrite');
+function news_post_link_rewrite($rules) {
   $rewrite_rules = array(
     'news/([0-9]+)/?$' => 'index.php?post_type=news&p=$matches[1]',
   );
@@ -153,10 +154,11 @@ function custom_post_link_rewrite($rules) {
 
 <?php
 /*==============================================================
-カスタム投稿（News）のパーマリンクをpaegIDに変更
+カスタム投稿タイプのパーマリンクをIDに
+・施工実績
 ==============================================================*/
-add_filter('post_type_link', 'custom_works_link', 1, 2);
-function custom_works_link($link, $post) {
+add_filter('post_type_link', 'works_post_link', 1, 2);
+function works_post_link($link, $post) {
   if($post -> post_type === 'works') {
     // カスタム投稿名が"works"の投稿のパーマリンクを「/works/投稿ID/」の形に書き換え
     return home_url('/works/'.$post->ID);
@@ -166,8 +168,8 @@ function custom_works_link($link, $post) {
 }
 
 //書き換えたパーマリンクに対応したリライトルールを追加
-add_filter('rewrite_rules_array', 'custom_works_link_rewrite');
-function custom_works_link_rewrite($rules) {
+add_filter('rewrite_rules_array', 'works_post_link_rewrite');
+function works_post_link_rewrite($rules) {
   $rewrite_rules = array(
     'works/([0-9]+)/?$' => 'index.php?post_type=works&p=$matches[1]',
   );
