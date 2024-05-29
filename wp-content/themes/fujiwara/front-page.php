@@ -660,33 +660,5 @@ Template Name: TOP page
 </main>
 <!-- /main -->
 </div>
-
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
-<!-- TweenMax.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/TweenMax.min.js"></script>
-<!-- sliderCursor.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/sliderCursor.js"></script>
-<!-- gsap.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/gsap.min.js"></script>
-<!-- ScrollTrigger.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/ScrollTrigger.min.js"></script>
-<!-- glightbox.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/glightbox.min.js"></script>
-<!-- common.bundle.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.bundle.js"></script>
-<!-- IE object-fit -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.js"></script>
-<script>
-objectFitImages();
-</script>
-<!-- polyfill(picture IE) -->
-<script src="https://polyfill.io/v3/polyfill.min.js?features=HTMLPictureElement"></script>
-<!-- jquery -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-3.6.0.min.js"></script>
-<!-- swiper.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/swiper.min.js"></script>
-<!-- splide.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/splide.min.js"></script>
-<!-- top.bundle.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/top.bundle.js"></script>

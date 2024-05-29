@@ -56,6 +56,181 @@ return $classes;
 
 <?php
 /*==============================================================
+  CSS/JS
+  ・css/javascriptファイルの読み込み
+==============================================================*/
+function add_files()
+{
+
+  /* WordPress提供のjquery.jsを読み込まない */
+  wp_deregister_script('jquery');
+
+  /* jQueryの読み込み */
+  wp_enqueue_script(
+    'jquery',
+    '//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
+    '',
+    '',
+    false
+  );
+
+  /* gsap.min.js */
+  wp_enqueue_script(
+    'gsap',
+    get_stylesheet_directory_uri() . '/assets/js/gsap.min.js',
+    ['jquery'],
+    '1.0.0',
+    true
+  );
+
+  /* ScrollTrigger.min.js */
+  wp_enqueue_script(
+    'scrollTrigger',
+    get_stylesheet_directory_uri() . '/assets/js/ScrollTrigger.min.js',
+    ['jquery'],
+    '1.0.0',
+    true
+  );
+
+  /* 共通のJSファイル */
+  wp_enqueue_script(
+    'main',
+    get_stylesheet_directory_uri() . '/assets/js/common.bundle.js',
+    ['jquery'],
+    '1.0.0',
+    true
+  );
+
+  /* IEでobject-fitプロパティを機能させる */
+  wp_enqueue_script(
+    'ofi',
+    'https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js',
+    ['jquery'],
+    '1.0.0',
+    true
+  );
+
+  /* IEでpictureタグを機能させる */
+  wp_enqueue_script(
+    'polyfill',
+    'https://polyfill.io/v3/polyfill.min.js?features=HTMLPictureElement',
+    ['jquery'],
+    '1.0.0',
+    true
+  );
+
+  /* トップページで読み込ませるJSファイル */
+  if (is_home() || is_front_page()) {
+    wp_enqueue_script(
+      'swiper',
+      get_stylesheet_directory_uri() . '/assets/js/swiper.min.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+    wp_enqueue_script(
+      'splide',
+      get_stylesheet_directory_uri() . '/assets/js/splide.min.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+    wp_enqueue_script(
+      'home',
+      get_stylesheet_directory_uri() . '/assets/js/top.bundle.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+    /* News詳細ページで読み込むJSファイル */
+  } elseif (is_singular('news')) {
+    wp_enqueue_script(
+      'clipboard',
+      'https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+    wp_enqueue_script(
+      'news',
+      get_stylesheet_directory_uri() . '/assets/js/news.bundle.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+    /* Recruitページで読み込むJSファイル */
+  } elseif (is_page('recruit')) {
+    wp_enqueue_script(
+      'recruit',
+      get_stylesheet_directory_uri() . '/assets/js/recruit.bundle.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+    /* Serviceページで読み込むJSファイル */
+  } elseif (is_page('service')) {
+    wp_enqueue_script(
+      'service',
+      get_stylesheet_directory_uri() . '/assets/js/service.bundle.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+    /* Worksページで読み込むJSファイル */
+  } elseif (is_archive('works')) {
+    wp_enqueue_script(
+      'works',
+      get_stylesheet_directory_uri() . '/assets/js/works.bundle.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+    /* Works詳細ページで読み込むJSファイル */
+  } elseif (is_singular('works')) {
+    wp_enqueue_script(
+      'glightbox',
+      get_stylesheet_directory_uri() . '/assets/js/glightbox.min.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+    wp_enqueue_script(
+      'works-detail',
+      get_stylesheet_directory_uri() . '/assets/js/worksdetail.bundle.js',
+      ['jquery'],
+      '1.0.0',
+      true
+    );
+  }
+
+  /* 共通のCSSファイル */
+  wp_enqueue_style(
+    'home',
+    get_template_directory_uri() . '/assets/css/style.css',
+    [],
+    '1.0.0',
+    'all'
+  );
+}
+add_action('wp_enqueue_scripts', 'add_files');
+
+?>
+
+<?php
+/*==============================================================
+通常投稿
+・通常投稿タブの非表示
+==============================================================*/
+function remove_menus()
+{
+global $menu;
+remove_menu_page('edit.php'); // 投稿を非表示
+}
+add_action('admin_menu', 'remove_menus');
+?>
+
+<?php
+/*==============================================================
 ページネーション
 ==============================================================*/
 /**
