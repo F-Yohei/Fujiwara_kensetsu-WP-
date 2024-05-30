@@ -130,13 +130,12 @@ Template Name: Works Category page
                         <button type="button" class="c-list-button -eng">View More</button>
                     </div>
                     <!-- pagination -->
-                    <div class="c-pagination">
-                        <div class="c-pagination__inner">
-                            <?php if (function_exists('pagination')) :
-                                pagination($the_query->max_num_pages, $paged);
-                            endif; ?>
-                        </div>
-                    </div>
+                    <?php
+                    if (function_exists('pagination')) :
+                        pagination($my_query->max_num_pages, $paged);
+                    endif;
+                    ?>
+                    <?php wp_reset_postdata(); ?>
                     <!-- /pagination -->
                 </div>
             </div>
@@ -147,9 +146,3 @@ Template Name: Works Category page
 <!-- /main -->
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
-<!-- gsap.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/gsap.min.js"></script>
-<!-- ScrollTrigger.min.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/ScrollTrigger.min.js"></script>
-<!-- common.bundle.js -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/common.bundle.js"></script>
