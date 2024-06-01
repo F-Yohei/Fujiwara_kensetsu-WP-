@@ -12,10 +12,11 @@
     <meta name="keywords" content="" />
     <link rel="canonical" href="./" />
     <!-- favicon -->
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/favicon.ico" />
+    <link rel="shortcut icon" href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/favicon/favicon.ico" />
+
     <!-- apple-touch-icon -->
     <link rel="apple-touch-icon" sizes="180x180"
-        href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/apple-touch-icon.png" />
+        href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/favicon/apple-touch-icon.png" />
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +38,7 @@
                 <!-- header-logo -->
                 <h1 class="l-header__logo">
                     <a href="<?php echo esc_url(home_url('')); ?>" class="l-header__logoLink">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/header_logo.svg"
+                        <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/common/header_logo.svg"
                             alt="ロゴ" />
                     </a>
                 </h1>
@@ -69,7 +70,7 @@
                                 <div class="l-menu__subInner">
                                     <figure>
                                         <picture>
-                                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/submenu_img01.jpg"
+                                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/common/submenu_img01.jpg"
                                                 alt="" />
                                         </picture>
                                     </figure>

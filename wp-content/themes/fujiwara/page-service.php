@@ -19,9 +19,9 @@ Template Name: Service page
             </h2>
             <figure class="js-parallax-hero">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/service/hero_img_pc.jpg"
+                    <source srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/service/hero_img_pc.jpg"
                         media="(min-width: 769px)" type="image/jpg" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service/hero_img_sp.jpg"
+                    <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/service/hero_img_sp.jpg"
                         alt="" />
                 </picture>
             </figure>
@@ -46,9 +46,9 @@ Template Name: Service page
                     <figure class="p-fixed-bg__img">
                         <picture>
                             <source
-                                srcset="<?php echo get_template_directory_uri(); ?>/assets/images/service/service_img01_pc.jpg"
+                                srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/service/service_img01_pc.jpg"
                                 media="(min-width: 769px)" type="image/jpg" />
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service/service_img01_sp.jpg"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/service/service_img01_sp.jpg"
                                 alt="" />
                         </picture>
                     </figure>
@@ -78,9 +78,9 @@ Template Name: Service page
                     <figure class="p-fixed-bg__img">
                         <picture>
                             <source
-                                srcset="<?php echo get_template_directory_uri(); ?>/assets/images/service/service_img02_pc.jpg"
+                                srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/service/service_img02_pc.jpg"
                                 media="(min-width: 769px)" type="image/jpg" />
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service/service_img02_sp.jpg"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/service/service_img02_sp.jpg"
                                 alt="" />
                         </picture>
                     </figure>
@@ -110,9 +110,9 @@ Template Name: Service page
                     <figure class="p-fixed-bg__img">
                         <picture>
                             <source
-                                srcset="<?php echo get_template_directory_uri(); ?>/assets/images/service/service_img03_pc.jpg"
+                                srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/service/service_img03_pc.jpg"
                                 media="(min-width: 769px)" type="image/jpg" />
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/service/service_img03_sp.jpg"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/service/service_img03_sp.jpg"
                                 alt="" />
                         </picture>
                     </figure>

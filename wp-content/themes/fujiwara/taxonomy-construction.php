@@ -18,9 +18,9 @@ Template Name: Works Category page
             </h2>
             <figure class="js-parallax-hero">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/works/hero_img_pc.jpg"
+                    <source srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/hero_img_pc.jpg"
                         media="(min-width: 769px)" type="image/jpg" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/hero_img_sp.jpg" alt="" />
+                    <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/hero_img_sp.jpg" alt="" />
                 </picture>
             </figure>
         </div>
@@ -96,7 +96,7 @@ Template Name: Works Category page
                                     <?php
                                             else :
                                             ?>
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/no-image.png"
+                                    <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/common/no-image.png"
                                         alt="アイキャッチ画像がありません" />
                                     <?php
                                             endif; ?>

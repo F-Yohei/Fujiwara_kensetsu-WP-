@@ -213,7 +213,19 @@ function add_files()
   );
 }
 add_action('wp_enqueue_scripts', 'add_files');
+?>
 
+<?php
+/*==============================================================
+  Theme URL
+  ・テーマ直下のURLショートコード
+  ・<?php echo do_shortcode('[theme_url]'); ?>
+==============================================================*/
+function my_theme_shortcode()
+{
+return esc_url(get_template_directory_uri());
+}
+add_shortcode('theme_url', 'my_theme_shortcode');
 ?>
 
 <?php

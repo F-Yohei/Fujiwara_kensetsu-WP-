@@ -19,9 +19,9 @@ Template Name: Company page
             </h2>
             <figure class="js-parallax-hero">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/company/hero_img_pc.jpg"
+                    <source srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/company/hero_img_pc.jpg"
                         media="(min-width: 769px)" type="image/jpg" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/company/hero_img_sp.jpg"
+                    <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/company/hero_img_sp.jpg"
                         alt="" />
                 </picture>
             </figure>
@@ -48,9 +48,9 @@ Template Name: Company page
                     <figure>
                         <picture>
                             <source
-                                srcset="<?php echo get_template_directory_uri(); ?>/assets/images/company/message_img_pc.jpg"
+                                srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/company/message_img_pc.jpg"
                                 media="(min-width: 769px)" type="image/jpg" />
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/company/message_img_sp.jpg"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/company/message_img_sp.jpg"
                                 alt="" />
                         </picture>
                     </figure>

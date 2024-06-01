@@ -21,9 +21,9 @@ Template Name: 404 page
             </h2>
             <figure class="js-parallax-hero">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/404/hero_img_pc.jpg"
+                    <source srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/404/hero_img_pc.jpg"
                         media="(min-width: 769px)" type="image/jpg" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/404/hero_img_sp.jpg" alt="" />
+                    <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/404/hero_img_sp.jpg" alt="" />
                 </picture>
             </figure>
         </div>
@@ -34,7 +34,7 @@ Template Name: 404 page
                         <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/404" class="c-breadcrumbs__link"
+                        <a href="<?php echo do_shortcode('[theme_url]'); ?>/404" class="c-breadcrumbs__link"
                             aria-current="page">ページが見つかりませんでした</a>
                     </li>
                 </ol>

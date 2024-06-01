@@ -11,13 +11,13 @@ Template Name: Works detail page
 <div id="js-cursor-img" class="p-cursor-img"></div>
 <div id="js-chaser-img" class="p-chaser-img">
     <figure class="js-cursor-img01"><img
-            src="<?php echo get_template_directory_uri(); ?>/assets/images/works/pointer_img01.jpg" width="240"
+            src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/pointer_img01.jpg" width="240"
             height="280" loading="lazy" alt="リンク：建築事業" /></figure>
     <figure class="js-cursor-img02"><img
-            src="<?php echo get_template_directory_uri(); ?>/assets/images/works/pointer_img02.jpg" width="240"
+            src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/pointer_img02.jpg" width="240"
             height="280" loading="lazy" alt="リンク：土木事業" /></figure>
     <figure class="js-cursor-img03"><img
-            src="<?php echo get_template_directory_uri(); ?>/assets/images/works/pointer_img03.jpg" width="240"
+            src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/pointer_img03.jpg" width="240"
             height="280" loading="lazy" alt="リンク：住宅事業" /></figure>
 </div>
 <!-- /cusor-pointer -->
@@ -79,7 +79,7 @@ Template Name: Works detail page
                             </span>
                         </div>
                         <figure class="p-works-detail__eyecatch">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/works/eyecatch_img.jpg"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/eyecatch_img.jpg"
                                 alt="" />
                         </figure>
                         <div id="item01" class="p-works-detail__block js-block01">
@@ -92,37 +92,37 @@ Template Name: Works detail page
                             <h2 class="p-works-detail__blockTitle">ギャラリー</h2>
                             <ul class="p-works-detail__gallery">
                                 <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img01.jpg"
+                                    <a href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img01.jpg"
                                         class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
                                         <figure><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img01_small.jpg"
+                                                src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img01_small.jpg"
                                                 alt="" />
                                         </figure>
                                     </a>
                                 </li>
                                 <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img02.jpg"
+                                    <a href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img02.jpg"
                                         class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
                                         <figure><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img02_small.jpg"
+                                                src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img02_small.jpg"
                                                 alt="" />
                                         </figure>
                                     </a>
                                 </li>
                                 <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img03.jpg"
+                                    <a href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img03.jpg"
                                         class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
                                         <figure><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img03_small.jpg"
+                                                src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img03_small.jpg"
                                                 alt="" />
                                         </figure>
                                     </a>
                                 </li>
                                 <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img04.jpg"
+                                    <a href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img04.jpg"
                                         class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
                                         <figure><img
-                                                src="<?php echo get_template_directory_uri(); ?>/assets/images/works/detail_img04_small.jpg"
+                                                src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img04_small.jpg"
                                                 alt="" />
                                         </figure>
                                     </a>

@@ -26,7 +26,7 @@ Template Name: Entry thanks page
                         <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/entry/thx" class="c-breadcrumbs__link"
+                        <a href="<?php echo esc_url(home_url('entry-thx')); ?>" class="c-breadcrumbs__link"
                             aria-current="page">ご応募ありがとうございました</a>
                     </li>
                 </ol>

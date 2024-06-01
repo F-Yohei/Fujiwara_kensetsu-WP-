@@ -18,9 +18,9 @@ Template Name: Recruit page
             </h2>
             <figure class="js-parallax-hero">
                 <picture>
-                    <source srcset="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/hero_img_pc.jpg"
+                    <source srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/hero_img_pc.jpg"
                         media="(min-width: 769px)" type="image/jpg" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/hero_img_sp.jpg"
+                    <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/hero_img_sp.jpg"
                         alt="" />
                 </picture>
             </figure>
@@ -32,7 +32,7 @@ Template Name: Recruit page
                         <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/company" class="c-breadcrumbs__link"
+                        <a href="<?php echo do_shortcode('[theme_url]'); ?>/company" class="c-breadcrumbs__link"
                             aria-current="page">採用情報</a>
                     </li>
                 </ul>
@@ -52,18 +52,18 @@ Template Name: Recruit page
                     <figure class="p-recruit-message__headImg js-parallax-img">
                         <picture>
                             <source
-                                srcset="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/head_img01_pc.jpg"
+                                srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/head_img01_pc.jpg"
                                 media="(min-width: 769px)" type="image/jpg" />
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/head_img01_sp.jpg"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/head_img01_sp.jpg"
                                 alt="" />
                         </picture>
                     </figure>
                     <figure class="p-recruit-message__headImg js-parallax-img">
                         <picture>
                             <source
-                                srcset="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/head_img02_pc.jpg"
+                                srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/head_img02_pc.jpg"
                                 media="(min-width: 769px)" type="image/jpg" />
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/head_img02_sp.jpg"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/head_img02_sp.jpg"
                                 alt="" />
                         </picture>
                     </figure>
@@ -73,9 +73,9 @@ Template Name: Recruit page
                     <figure>
                         <picture>
                             <source
-                                srcset="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/message_img_pc.jpg"
+                                srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/message_img_pc.jpg"
                                 media="(min-width: 769px)" type="image/jpg" />
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/message_img_sp.jpg"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/message_img_sp.jpg"
                                 alt="" />
                         </picture>
                     </figure>
@@ -91,9 +91,9 @@ Template Name: Recruit page
             <figure class="p-recruit-message__parallax js-parallax-img">
                 <picture>
                     <source
-                        srcset="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/parallax_img_pc.jpg"
+                        srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/parallax_img_pc.jpg"
                         media="(min-width: 769px)" type="image/jpg" />
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/parallax_img_sp.jpg"
+                    <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/parallax_img_sp.jpg"
                         alt="" />
                 </picture>
             </figure>
@@ -297,9 +297,9 @@ Template Name: Recruit page
                     <figure>
                         <picture>
                             <source
-                                srcset="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/form_bg_pc.jpg"
+                                srcset="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/form_bg_pc.jpg"
                                 media="(min-width: 769px)" type="image/jpg" />
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/recruit/form_bg_sp.jpg"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/recruit/form_bg_sp.jpg"
                                 width="390" height="182" loading="lazy" alt="" />
                         </picture>
                     </figure>

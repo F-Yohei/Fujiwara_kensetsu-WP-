@@ -56,7 +56,7 @@ Template Name: News detail page
                             <?php
                             else :
                             ?>
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/no-image.png"
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/common/no-image.png"
                                 alt="アイキャッチ画像がありません" />
                             <?php
                             endif; ?>
@@ -88,7 +88,7 @@ Template Name: News detail page
                                 <li class="p-news-detail__socialItem">
                                     <a title="クリップボードにURLをコピー" class="share-url p-news-detail__socialLink -copy"
                                         href="javascript:void(0);"
-                                        data-clipboard-text="<?php echo get_template_directory_uri(); ?>/"><span
+                                        data-clipboard-text="<?php echo do_shortcode('[theme_url]'); ?>/"><span
                                             class="icon"></span></a>
                                     <span class="url-copied">
                                         <span>URLをコピーしました！</span>
@@ -127,7 +127,7 @@ Template Name: News detail page
                                         <?php
                                                 else :
                                                 ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/common/no-image.png"
+                                        <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/common/no-image.png"
                                             alt="アイキャッチ画像がありません" />
                                         <?php
                                                 endif; ?>

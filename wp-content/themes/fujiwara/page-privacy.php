@@ -27,7 +27,7 @@ Template Name: Privacy page
                         <a href="<?php echo esc_url(home_url('')); ?>" class="c-breadcrumbs__link">TOP</a>
                     </li>
                     <li class="c-breadcrumbs__item">
-                        <a href="<?php echo get_template_directory_uri(); ?>/privacy" class="c-breadcrumbs__link"
+                        <a href="<?php echo esc_url(home_url('privacy')); ?>" class="c-breadcrumbs__link"
                             aria-current="page">プライバシーポリシー</a>
                     </li>
                 </ol>
