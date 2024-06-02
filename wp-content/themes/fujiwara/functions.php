@@ -410,3 +410,15 @@ function entry_validation_rule($validation, $data, $Data) {
 }
 add_filter('mwform_validation_mw-wp-form-185', 'entry_validation_rule', 10, 3);
 ?>
+
+<?php
+/*==============================================================
+ajaxzip3の設定
+・【MW WP Form】郵便番号を入力して即座に住所が反映
+==============================================================*/
+function enq_ajaxzip3()
+{
+wp_enqueue_script('ajaxzip3-script', 'https://ajaxzip3.github.io/ajaxzip3.js', array(), false, true);
+}
+add_action('wp_enqueue_scripts', 'enq_ajaxzip3');
+?>

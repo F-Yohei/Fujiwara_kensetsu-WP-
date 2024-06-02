@@ -13,7 +13,6 @@
     <link rel="canonical" href="./" />
     <!-- favicon -->
     <link rel="shortcut icon" href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/favicon/favicon.ico" />
-
     <!-- apple-touch-icon -->
     <link rel="apple-touch-icon" sizes="180x180"
         href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/favicon/apple-touch-icon.png" />

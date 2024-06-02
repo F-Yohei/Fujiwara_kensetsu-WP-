@@ -79,8 +79,15 @@ Template Name: Works detail page
                             </span>
                         </div>
                         <figure class="p-works-detail__eyecatch">
-                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/eyecatch_img.jpg"
-                                alt="" />
+                            <?php if (has_post_thumbnail()) :
+                                the_post_thumbnail('large'); ?>
+                            <?php
+                            else :
+                            ?>
+                            <img src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/common/no-image.png"
+                                alt="アイキャッチ画像がありません" />
+                            <?php
+                            endif; ?>
                         </figure>
                         <div id="item01" class="p-works-detail__block js-block01">
                             <h2 class="p-works-detail__blockTitle">概要</h2>
