@@ -363,3 +363,50 @@ function works_post_link_rewrite($rules) {
   return $rewrite_rules + $rules;
 }
 ?>
+
+
+<?php
+/*==============================================================
+MW WP FORM validation
+・お問い合わせフォームのエラー文カスタム
+==============================================================*/
+function validation_rule($validation, $data, $Data) {
+	$validation->set_rule('company', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('name', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('subname', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('subname', 'subname', array('message' => 'カタカナで入力してください'));
+	$validation->set_rule('mail', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('mail', 'mail', array('message' => '正しい形式で入力してください'));
+	$validation->set_rule('postcode', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('region', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('address', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('streetaddress', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('radio', 'radio', array('message' => '選択してください'));
+	$validation->set_rule('textarea', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('privacy-check', 'privacy-check', array('message' => 'チェックを入れてください'));
+  return $Validation;
+}
+add_filter('mwform_validation_mw-wp-form-91', 'validation_rule', 10, 3);
+?>
+
+<?php
+/*==============================================================
+MW WP FORM validation
+・エントリーフォームのエラー文カスタム
+==============================================================*/
+function entry_validation_rule($validation, $data, $Data) {
+	$validation->set_rule('name', 'noempty', array('message' => '必須項目です'));
+  	$validation->set_rule('subname', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('subname', 'subname', array('message' => 'カタカナで入力してください'));
+  	$validation->set_rule('mail', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('mail', 'mail', array('message' => '正しい形式で入力してください'));
+  	$validation->set_rule('postcode', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('region', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('address', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('streetaddress', 'noempty', array('message' => '必須項目です'));
+	$validation->set_rule('file', 'noempty', array('message' => 'ファイルが添付されていません'));
+	$validation->set_rule('textarea', 'noempty', array('message' => '必須項目です'));
+  return $Validation;
+}
+add_filter('mwform_validation_mw-wp-form-185', 'entry_validation_rule', 10, 3);
+?>
