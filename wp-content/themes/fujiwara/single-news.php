@@ -88,7 +88,7 @@ Template Name: News detail page
                                 <li class="p-news-detail__socialItem">
                                     <a title="クリップボードにURLをコピー" class="share-url p-news-detail__socialLink -copy"
                                         href="javascript:void(0);"
-                                        data-clipboard-text="<?php echo do_shortcode('[theme_url]'); ?>/"><span
+                                        data-clipboard-text="<?php the_title(); ?>｜藤原建設工業 <?php the_permalink(); ?>"><span
                                             class="icon"></span></a>
                                     <span class="url-copied">
                                         <span>URLをコピーしました！</span>
