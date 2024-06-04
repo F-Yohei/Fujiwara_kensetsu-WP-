@@ -63,3 +63,10 @@ Template Name: Contact page
 <!-- /main -->
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
+<script>
+jQuery(function($) {
+    $('.zip-button').keyup(function() {
+        AjaxZip3.zip2addr('postcode', '', 'region', 'streetaddress', 'address');
+    });
+});
+</script>
