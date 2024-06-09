@@ -3,13 +3,16 @@
 
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/ fb# website: http://ogp.me/ns/website#">
     <meta charset="utf-8" />
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="藤原建設工業株式会社">
+    <meta name="twitter:description" content="藤原建設工業株式会社のホームページです">
+    <meta name="twitter:image"
+        content="<?php echo get_template_directory_uri(); ?>/assets/images/home/home_slider_img01_pc.jpg">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="format-detection" content="email=no, telephone=no, address=no" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex,nofollow" />
     <title>藤原建設工業株式会社</title>
     <meta name="description" content="「過去と未来を繋ぎ続ける」そんな会社を目指す技術集団が、藤原建設工業です。" />
-    <meta name="keywords" content="" />
     <link rel="canonical" href="./" />
     <!-- favicon -->
     <link rel="shortcut icon" href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/favicon/favicon.ico" />
