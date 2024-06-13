@@ -98,42 +98,17 @@ Template Name: Works detail page
                         <div id="item02" class="p-works-detail__block js-block02">
                             <h2 class="p-works-detail__blockTitle">ギャラリー</h2>
                             <ul class="p-works-detail__gallery">
+                                <?php
+                                $fields = $cfs->get('worksGallery');
+                                foreach ($fields as $field) :
+                                ?>
                                 <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img01.jpg"
-                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
-                                        <figure><img
-                                                src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img01_small.jpg"
-                                                alt="" />
-                                        </figure>
+                                    <a href="<?php echo $field['worksGalleryImg']; ?>"
+                                        class="p-works-detail__galleryLink glightbox">
+                                        <figure><img src="<?php echo $field['worksGalleryImg']; ?>" alt="" /></figure>
                                     </a>
                                 </li>
-                                <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img02.jpg"
-                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
-                                        <figure><img
-                                                src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img02_small.jpg"
-                                                alt="" />
-                                        </figure>
-                                    </a>
-                                </li>
-                                <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img03.jpg"
-                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
-                                        <figure><img
-                                                src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img03_small.jpg"
-                                                alt="" />
-                                        </figure>
-                                    </a>
-                                </li>
-                                <li class="p-works-detail__galleryItem">
-                                    <a href="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img04.jpg"
-                                        class="p-works-detail__galleryLink glightbox" data-lightbox="myGallery">
-                                        <figure><img
-                                                src="<?php echo do_shortcode('[theme_url]'); ?>/assets/images/works/detail_img04_small.jpg"
-                                                alt="" />
-                                        </figure>
-                                    </a>
-                                </li>
+                                <?php endforeach; ?>
                             </ul>
                         </div>
                         <div id="item03" class="p-works-detail__block js-block03">
