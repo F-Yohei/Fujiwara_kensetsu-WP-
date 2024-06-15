@@ -191,5 +191,9 @@ Template Name: Works detail page
     </article>
 </main>
 <!-- /main -->
+<!-- TweenMax.min.js -->
+<script src="<?php echo do_shortcode('[theme_url]'); ?>/assets/js/TweenMax.min.js"></script>
+<!-- sliderCursor.js -->
+<script src="<?php echo do_shortcode('[theme_url]'); ?>/assets/js/worksCursor.js"></script>
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
