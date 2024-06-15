@@ -660,5 +660,9 @@ Template Name: TOP page
 </main>
 <!-- /main -->
 </div>
+<!-- TweenMax.min.js -->
+<script src="<?php echo do_shortcode('[theme_url]'); ?>/assets/js/TweenMax.min.js"></script>
+<!-- TweenMax.min.js -->
+<script src="<?php echo do_shortcode('[theme_url]'); ?>/assets/js/sliderCursor.js"></script>
 <!-- footer呼び出し -->
 <?php get_footer(); ?>
