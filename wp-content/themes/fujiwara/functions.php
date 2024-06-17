@@ -394,7 +394,9 @@ function validation_rule($validation, $data, $Data)
   $validation->set_rule('privacy-check', 'privacy-check', array('message' => 'チェックを入れてください'));
   return $Validation;
 }
+if (isset($Validation)) {
 add_filter('mwform_validation_mw-wp-form-91', 'validation_rule', 10, 3);
+}
 ?>
 
 <?php
@@ -417,21 +419,10 @@ function entry_validation_rule($validation, $data, $Data)
   $validation->set_rule('textarea', 'noempty', array('message' => '必須項目です'));
   return $Validation;
 }
+if (isset($Validation)) {
 add_filter('mwform_validation_mw-wp-form-185', 'entry_validation_rule', 10, 3);
-?>
-
-<?php
-/*==============================================================
-ajaxzip3の設定
-・【MW WP Form】郵便番号を入力して即座に住所が反映
-==============================================================*/
-function enq_ajaxzip3()
-{
-  wp_enqueue_script('ajaxzip3-script', 'https://ajaxzip3.github.io/ajaxzip3.js', array(), false, true);
 }
-add_action('wp_enqueue_scripts', 'enq_ajaxzip3');
 ?>
-
 
 <?php
 /*==============================================================
@@ -466,9 +457,23 @@ AjaxZip3.zip2addr('postcode', '', 'region', 'streetaddress', 'address');
   }
 
   // ハンドル 'lazyload' の 後（ 'after'で指定 ） に $js_str で定義したインラインコードを読み込む
-  wp_add_inline_script("lazyload", $js_str, 'after');
+  if (isset($js_str)) {
+    wp_add_inline_script("lazyload", $js_str, 'after');
+  }
 }
 
 add_action('wp_enqueue_scripts', 'add_enqueue_scripts');
 
+?>
+
+<?php
+/*==============================================================
+ajaxzip3の設定
+・【MW WP Form】郵便番号を入力して即座に住所が反映
+==============================================================*/
+function enq_ajaxzip3()
+{
+  wp_enqueue_script('ajaxzip3-script', 'https://ajaxzip3.github.io/ajaxzip3.js', array(), false, true);
+}
+add_action('wp_enqueue_scripts', 'enq_ajaxzip3');
 ?>
