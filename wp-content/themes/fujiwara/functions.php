@@ -379,12 +379,14 @@ MW WP FORM validation
 ==============================================================*/
 function validation_rule($validation, $data, $Data)
 {
+  $validation->set_rule('select', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('company', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('name', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('subname', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('subname', 'subname', array('message' => 'カタカナで入力してください'));
   $validation->set_rule('mail', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('mail', 'mail', array('message' => '正しい形式で入力してください'));
+  $validation->set_rule('phone', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('postcode', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('region', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('address', 'noempty', array('message' => '必須項目です'));
@@ -394,9 +396,7 @@ function validation_rule($validation, $data, $Data)
   $validation->set_rule('privacy-check', 'privacy-check', array('message' => 'チェックを入れてください'));
   return $Validation;
 }
-if (isset($Validation)) {
 add_filter('mwform_validation_mw-wp-form-91', 'validation_rule', 10, 3);
-}
 ?>
 
 <?php
@@ -419,9 +419,7 @@ function entry_validation_rule($validation, $data, $Data)
   $validation->set_rule('textarea', 'noempty', array('message' => '必須項目です'));
   return $Validation;
 }
-if (isset($Validation)) {
 add_filter('mwform_validation_mw-wp-form-185', 'entry_validation_rule', 10, 3);
-}
 ?>
 
 <?php
@@ -457,7 +455,7 @@ AjaxZip3.zip2addr('postcode', '', 'region', 'streetaddress', 'address');
   }
 
   // ハンドル 'lazyload' の 後（ 'after'で指定 ） に $js_str で定義したインラインコードを読み込む
-  if (isset($js_str)) {
+  if (isset($js_str)) { //$js_strの値が入っているかチェックして値が入っていたら処理を走らせる
     wp_add_inline_script("lazyload", $js_str, 'after');
   }
 }
