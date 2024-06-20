@@ -1819,6 +1819,7 @@ body.is-active {
 
 .l-form__dd {
   margin-top: 1.9rem;
+  position: relative;
   /* 内側のマル */
   /* 選択された時の内側のマルの色 */
 }
@@ -1921,7 +1922,8 @@ body.is-active {
 
 .mw_wp_form .error {
   color: #ff0000;
-  margin-top: 1rem;
+  position: absolute;
+  bottom: -2.6rem;
 }
 
 .l-form__select {
@@ -1968,6 +1970,7 @@ body.is-active {
 .l-form__privacy {
   display: block;
   margin-top: 3.2rem;
+  position: relative;
 }
 
 .l-form__privacy label {
@@ -7089,6 +7092,8 @@ button.swiper-pagination-bullet {
 
   .l-form__dd {
     width: 69.375%;
+    position: relative;
+
   }
 
   .l-form__dd .select {
@@ -7110,6 +7115,7 @@ button.swiper-pagination-bullet {
   .l-form__privacy {
     width: 69.375%;
     margin: 5.2rem 0 0 auto;
+    position: relative;
   }
 
   .l-form__submit {
