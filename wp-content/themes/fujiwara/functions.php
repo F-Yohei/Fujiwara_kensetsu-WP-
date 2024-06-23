@@ -379,6 +379,7 @@ MW WP FORM validation
 ==============================================================*/
 function validation_rule($validation, $data, $Data)
 {
+  $Validation = "";
   $validation->set_rule('select', 'noempty', array('message' => '選択してください'));
   $validation->set_rule('company', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('name', 'noempty', array('message' => '必須項目です。'));
@@ -404,8 +405,8 @@ add_filter('mwform_validation_mw-wp-form-91', 'validation_rule', 10, 3);
 MW WP FORM validation
 ・エントリーフォームのエラー文カスタム
 ==============================================================*/
-function entry_validation_rule($validation, $data, $Data)
-{
+function entry_validation_rule($validation, $data, $Data) {
+  $Validation = "";
   $validation->set_rule('name', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('subname', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('subname', 'subname', array('message' => 'カタカナで入力してください'));

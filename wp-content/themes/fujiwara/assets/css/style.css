@@ -2047,6 +2047,14 @@ body.is-active {
   margin-top: 8rem;
 }
 
+body.confirm .l-form__dd.-radio {
+  display: initial;
+}
+
+body.confirm .l-form__dd.-radio .-flex:not(:last-child) {
+  margin-right: 0;
+}
+
 /* home-mv
 ----------------------------------------- */
 .p-home-mv {
