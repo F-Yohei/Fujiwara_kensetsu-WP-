@@ -384,7 +384,6 @@ function validation_rule($validation, $data, $Data)
   $validation->set_rule('company', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('name', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('subname', 'noempty', array('message' => '必須項目です。'));
-  $validation->set_rule('select', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('company', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('name', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('subname', 'noempty', array('message' => '必須項目です'));

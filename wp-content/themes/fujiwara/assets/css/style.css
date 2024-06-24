@@ -1922,12 +1922,9 @@ body.is-active {
 
 .mw_wp_form .error {
   color: #ff0000;
-<<<<<<< HEAD
   margin-top: 1rem;
-=======
   position: absolute;
   bottom: -2.6rem;
->>>>>>> 00fba5c1f17bd2f80f74edd39d67ff1288626a20
 }
 
 .l-form__select {
