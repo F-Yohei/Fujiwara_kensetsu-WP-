@@ -380,20 +380,27 @@ MW WP FORM validation
 function validation_rule($validation, $data, $Data)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 00fba5c1f17bd2f80f74edd39d67ff1288626a20
   $Validation = "";
   $validation->set_rule('select', 'noempty', array('message' => '選択してください'));
   $validation->set_rule('company', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('name', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('subname', 'noempty', array('message' => '必須項目です。'));
+<<<<<<< HEAD
 =======
   $validation->set_rule('select', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('company', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('name', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('subname', 'noempty', array('message' => '必須項目です'));
 >>>>>>> parent of 4b2b054 (お問い合わせページとエントリーページのフォームエラーメッセージのカスタマイズ。スタイル調整)
+=======
+>>>>>>> 00fba5c1f17bd2f80f74edd39d67ff1288626a20
   $validation->set_rule('subname', 'subname', array('message' => 'カタカナで入力してください'));
-  $validation->set_rule('mail', 'noempty', array('message' => '必須項目です'));
+  $validation->set_rule('mail', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('mail', 'mail', array('message' => '正しい形式で入力してください'));
+<<<<<<< HEAD
   $validation->set_rule('phone', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('postcode', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('region', 'noempty', array('message' => '必須項目です'));
@@ -402,6 +409,16 @@ function validation_rule($validation, $data, $Data)
   $validation->set_rule('radio', 'radio', array('message' => '選択してください'));
   $validation->set_rule('textarea', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('privacy-check', 'privacy-check', array('message' => 'チェックを入れてください'));
+=======
+  $validation->set_rule('phone', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('postcode', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('region', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('address', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('streetaddress', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('radio', 'required', array('message' => '選択してください'));
+  $validation->set_rule('textarea', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('privacy-check', 'required', array('message' => 'チェックを入れてください'));
+>>>>>>> 00fba5c1f17bd2f80f74edd39d67ff1288626a20
   return $Validation;
 }
 add_filter('mwform_validation_mw-wp-form-91', 'validation_rule', 10, 3);
@@ -413,25 +430,34 @@ MW WP FORM validation
 ・エントリーフォームのエラー文カスタム
 ==============================================================*/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 00fba5c1f17bd2f80f74edd39d67ff1288626a20
 function entry_validation_rule($validation, $data, $Data) {
   $Validation = "";
   $validation->set_rule('name', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('subname', 'noempty', array('message' => '必須項目です。'));
+<<<<<<< HEAD
 =======
 function entry_validation_rule($validation, $data, $Data)
 {
   $validation->set_rule('name', 'noempty', array('message' => '必須項目です'));
   $validation->set_rule('subname', 'noempty', array('message' => '必須項目です'));
 >>>>>>> parent of 4b2b054 (お問い合わせページとエントリーページのフォームエラーメッセージのカスタマイズ。スタイル調整)
+=======
+>>>>>>> 00fba5c1f17bd2f80f74edd39d67ff1288626a20
   $validation->set_rule('subname', 'subname', array('message' => 'カタカナで入力してください'));
-  $validation->set_rule('mail', 'noempty', array('message' => '必須項目です'));
+  $validation->set_rule('birthday', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('mail', 'noempty', array('message' => '必須項目です。'));
   $validation->set_rule('mail', 'mail', array('message' => '正しい形式で入力してください'));
-  $validation->set_rule('postcode', 'noempty', array('message' => '必須項目です'));
-  $validation->set_rule('region', 'noempty', array('message' => '必須項目です'));
-  $validation->set_rule('address', 'noempty', array('message' => '必須項目です'));
-  $validation->set_rule('streetaddress', 'noempty', array('message' => '必須項目です'));
+  $validation->set_rule('postcode', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('region', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('address', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('streetaddress', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('radio', 'required', array('message' => '選択してください'));
   $validation->set_rule('file', 'noempty', array('message' => 'ファイルが添付されていません'));
-  $validation->set_rule('textarea', 'noempty', array('message' => '必須項目です'));
+  $validation->set_rule('textarea', 'noempty', array('message' => '必須項目です。'));
+  $validation->set_rule('privacy-check', 'required', array('message' => 'チェックを入れてください'));
   return $Validation;
 }
 add_filter('mwform_validation_mw-wp-form-185', 'entry_validation_rule', 10, 3);
