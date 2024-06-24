@@ -1843,7 +1843,14 @@ body.is-active {
   -webkit-box-align: center;
   display: -webkit-box;
   display: flex;
+  justify-content: space-between;
   align-items: center;
+}
+
+@media screen and (min-width: 769px) {
+  .l-form__dd.-radio {
+    justify-content: initial;
+  }
 }
 
 .l-form__dd .-radio>span:not(:last-child) {
@@ -1908,6 +1915,15 @@ body.is-active {
   margin: 0;
 }
 
+.mwform-checkbox-field-text {
+  display: none;
+}
+
+.mw_wp_form .error {
+  color: #ff0000;
+  margin-top: 1rem;
+}
+
 .l-form__select {
   position: relative;
 }
@@ -1938,6 +1954,7 @@ body.is-active {
   background: #f0f0f0;
   cursor: pointer;
 }
+
 
 .l-form__label {
   color: #111;
@@ -2025,6 +2042,14 @@ body.is-active {
 
 .mw_wp_form_confirm .l-form__submit -submit:nth-of-type(1) {
   margin-top: 8rem;
+}
+
+body.confirm .l-form__dd.-radio {
+  display: initial;
+}
+
+body.confirm .l-form__dd.-radio .-flex:not(:last-child) {
+  margin-right: 0;
 }
 
 /* home-mv
