@@ -130,6 +130,7 @@ Template Name: Works Category page
                     endif;
                     ?>
                     <?php wp_reset_postdata(); ?>
+                    <!-- /pagination -->
                 </div>
             </div>
         </section>

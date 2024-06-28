@@ -120,11 +120,8 @@ Template Name: Works Category page
                                 </div>
                             </a>
                         </li>
-                        <?php
-                            endwhile;
-                        endif;
-                        wp_reset_postdata();
-                        ?>
+                        <?php endwhile; ?>
+                        <?php endif; ?>
                     </ul>
                     <div class="c-list-button__block">
                         <button type="button" class="c-list-button -eng">View More</button>
@@ -132,7 +129,7 @@ Template Name: Works Category page
                     <!-- pagination -->
                     <?php
                     if (function_exists('pagination')) :
-                        pagination($my_query->max_num_pages, $paged);
+                        pagination($the_query->max_num_pages, $paged);
                     endif;
                     ?>
                     <?php wp_reset_postdata(); ?>

@@ -130,6 +130,7 @@ Template Name: News page
                         endif;
                         ?>
                         <?php wp_reset_postdata(); ?>
+                        <!-- /pagination -->
                     </div>
                     <aside class="p-news-archive__nav">
                         <h2 class="p-news-archive__navTitle">Archive</h2>
